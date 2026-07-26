@@ -10,7 +10,7 @@ import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
 import { SITE } from '@/lib/constants'
 
 const STATS = [
-  { label: 'Projects Built', to: 20, suffix: '+' },
+  { label: 'Projects Built', to: 11, suffix: '+' },
   { label: 'Technologies Mastered', to: 35, suffix: '+' },
   { label: 'GitHub Commits', to: 500, suffix: '+' },
 ]
