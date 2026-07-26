@@ -10,10 +10,11 @@ import { cn } from '@/lib/utils'
 
 const FILTERS = [
   'All',
+  'Full Stack',
   'AI/ML',
+  'Web',
   'Security',
   'Computer Vision',
-  'Full Stack',
   'IoT',
 ] as const
 
@@ -28,7 +29,7 @@ export function ProjectsSection() {
       <SectionHeader
         eyebrow="Projects"
         title="Selected Work"
-        subtitle="AI systems, security tools, computer-vision pipelines, and full-stack products built end-to-end."
+        subtitle="Full-stack products, mobile apps, AI systems, IoT sensing, and security tools built end-to-end."
       />
 
       <div className="mb-10 flex flex-wrap gap-2">

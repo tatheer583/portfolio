@@ -16,6 +16,26 @@ interface ProjectCardProps {
 }
 
 const PROJECT_VISUALS: Record<string, { gradient: string; metric: string; label: string }> = {
+  'skardu-spring': {
+    gradient: 'from-sky-500/30 via-cyan-400/20 to-blue-600/25',
+    metric: 'Luxury commerce',
+    label: 'Full-stack brand',
+  },
+  'khidmat-app': {
+    gradient: 'from-teal-500/30 via-amber-400/15 to-emerald-500/25',
+    metric: '6 AI agents',
+    label: 'Service orchestration',
+  },
+  'personal-finance-manager': {
+    gradient: 'from-emerald-500/30 via-lime-400/15 to-cyan-500/20',
+    metric: 'Money clarity',
+    label: 'Finance dashboard',
+  },
+  'medi-connect': {
+    gradient: 'from-blue-500/25 via-sky-400/20 to-indigo-500/25',
+    metric: 'Care workflow',
+    label: 'Healthcare platform',
+  },
   'jarvis-ai-assistant': {
     gradient: 'from-indigo-500/30 via-cyan-500/20 to-violet-500/25',
     metric: 'Voice + LLM',
@@ -25,6 +45,16 @@ const PROJECT_VISUALS: Record<string, { gradient: string; metric: string; label:
     gradient: 'from-emerald-500/25 via-cyan-500/20 to-blue-500/25',
     metric: 'Threat AI',
     label: 'Security scan',
+  },
+  'e-nose-system': {
+    gradient: 'from-fuchsia-500/20 via-teal-500/25 to-rose-500/20',
+    metric: 'Air intelligence',
+    label: 'IoT + ML sensing',
+  },
+  'wiwave-motion': {
+    gradient: 'from-cyan-500/25 via-blue-500/20 to-violet-500/20',
+    metric: 'WiFi sensing',
+    label: 'Motion detection',
   },
   'drone-ai-system': {
     gradient: 'from-sky-500/25 via-zinc-500/20 to-amber-500/20',
