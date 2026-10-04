@@ -130,8 +130,8 @@ export const UI_TEXTURES = [
 export const GALLERY_TEXTURES_BASE = [
     '/reference/textures/gallery/floor.webp',
     '/reference/textures/gallery/railing.webp',
-    '/reference/textures/gallery/domki.webp',
-    '/reference/textures/gallery/miastotlo.webp',
+    '/reference/portfolio/gallery-architecture.webp',
+    '/reference/portfolio/gallery-architecture-painted.webp',
     '/reference/textures/gallery/bird_gray.webp',
     '/reference/textures/gallery/klamerka.webp',
     '/reference/textures/gallery/openliveproject.webp',
