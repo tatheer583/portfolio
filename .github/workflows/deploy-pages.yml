@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static portfolio
+      - name: Move server routes out of static build
         shell: bash
         run: |
           set -euo pipefail
@@ -46,15 +46,23 @@ jobs:
           mkdir -p "$hold_dir"
           mv app/api "$hold_dir/api"
           mv app/resume "$hold_dir/resume"
-          restore_routes() {
-            mv "$hold_dir/api" app/api
-            mv "$hold_dir/resume" app/resume
-            rmdir "$hold_dir"
-          }
-          trap restore_routes EXIT
-          npm run build
+
+      - name: Build static portfolio
+        run: npm run build
+
+      - name: Prepare Pages assets
+        run: |
           node scripts/prepare-github-pages.cjs out
           touch out/.nojekyll
+
+      - name: Restore server routes
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -d '.pages-server-routes/api' ]; then mv .pages-server-routes/api app/api; fi
+          if [ -d '.pages-server-routes/resume' ]; then mv .pages-server-routes/resume app/resume; fi
+          rmdir .pages-server-routes 2>/dev/null || true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
