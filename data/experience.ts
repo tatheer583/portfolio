@@ -40,6 +40,6 @@ export interface EducationEntry {
 export const EDUCATION: EducationEntry = {
   institution: 'NUTECH University',
   degree: 'Bachelor of Science',
-  period: '2022 — Present',
+  period: '2025 — 2029',
   note: 'Focused on computing, intelligent systems, and applied engineering.',
 }

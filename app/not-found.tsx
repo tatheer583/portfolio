@@ -8,8 +8,8 @@ export default function NotFound() {
         This page doesn’t exist.
       </h1>
       <p className="mt-3 max-w-sm text-content-secondary">
-        The page you’re looking for may have moved. Head back home, or ask the AI
-        assistant what you were after.
+        The page you’re looking for may have moved. Return to the corridor to
+        explore my projects, background, and contact details.
       </p>
       <Link
         href="/"

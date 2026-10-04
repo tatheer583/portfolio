@@ -1,0 +1,130 @@
+
+/* A connected studio tour, with the scene as the main view. */
+.virtual-tour .corridor-header { position: absolute; inset: 0 0 auto; width: 100%; height: 92px; min-height: 92px; z-index: 20; background: linear-gradient(180deg, #fff5d7ed 0%, #fff5d7d9 78%, #fff5d700 100%); border-bottom: 1px solid #a88c5138; backdrop-filter: blur(8px); }
+.virtual-tour .corridor-stage::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(circle at 52% 46%, #fff9d82b, transparent 38%), linear-gradient(112deg, #fff8d414, transparent 40%, #8d9b7720 100%); mix-blend-mode: soft-light; animation: studio-ambient-drift 14s ease-in-out infinite alternate; }
+.virtual-tour .corridor-stage::after { content: ''; position: absolute; inset: -20% -8%; z-index: 2; pointer-events: none; opacity: 0; background: linear-gradient(112deg, transparent 32%, #fff6cf1f 47%, #fff6cf50 50%, transparent 63%); transform: translateX(-30%) skewX(-9deg); }
+.virtual-tour.is-travelling .corridor-stage::after { opacity: 1; animation: studio-travel-sweep 1.7s cubic-bezier(.22,1,.36,1) infinite; }
+.virtual-tour .corridor-top-nav button[aria-current="page"] { color: #4b4431; }
+.virtual-tour .corridor-top-nav button[aria-current="page"]::after { content: ''; position: absolute; left: 30%; right: 30%; bottom: -8px; height: 1px; background: #958255; transform: rotate(-4deg); }
+.virtual-tour button:disabled { cursor: default; }
+.virtual-tour .corridor-header button:disabled { opacity: .5; }
+.tour-entry-copy { position: absolute; z-index: 6; top: 11%; left: 4.6vw; width: min(320px, 30vw); pointer-events: none; animation: story-appear .8s both; }
+.tour-entry-copy h1 { margin: 0 0 20px; font: 400 clamp(43px, 4.6vw, 66px)/1.02 Georgia, serif; letter-spacing: -.065em; color: #3a392f; }
+.tour-entry-copy h1 em { color: #938050; font-weight: 400; }
+.tour-entry-copy > p:not(.corridor-eyebrow) { max-width: 290px; color: #746a50; font-size: 12px; line-height: 1.9; }
+.tour-entry-copy strong { color: #4f4938; font-weight: 500; }
+.tour-entry-copy > small { display: block; margin-top: 22px; color: #9a8760; font-family: var(--font-hand); font-size: 12px; }
+.tour-entry-actions { display: flex; align-items: flex-start; flex-direction: column; gap: 15px; margin-top: 26px; pointer-events: auto; }
+.tour-primary, .tour-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 45px; border: 1px solid #bbaa7f; padding: 13px 19px; border-radius: 4px 8px 5px 7px; font-size: 11px; font-family: var(--font-inter); line-height: 1.25; text-decoration: none; transition: transform .2s, background .2s; }
+.tour-primary { background: #68694f; border-color: #68694f; color: #fff8df; }
+.tour-primary:hover { background: #505440; transform: translateY(-2px); }
+.tour-secondary { background: #fff8dfeb; color: #746343; }
+.tour-secondary:hover { background: #f2e7c1; transform: translateY(-2px); }
+.tour-primary:disabled, .tour-secondary:disabled { opacity: .5; transform: none; }
+.tour-guided-link { display: inline-flex; gap: 9px; align-items: center; font-size: 11px; padding: 6px 0; color: #786b4e; border: 0; background: transparent; }
+.tour-guided-link:hover { color: #363a2e; text-decoration: underline; text-underline-offset: 4px; }
+.tour-location-copy { position: absolute; z-index: 6; left: 32px; top: 28px; width: 310px; pointer-events: none; animation: story-appear .5s both; padding: 16px 21px; border-left: 1px solid #b6a68180; background: linear-gradient(90deg, #fff7dbee, #fff7db9c 85%, transparent); }
+.tour-location-copy h1 { font: 400 36px/1.08 Georgia, serif; letter-spacing: -.035em; margin: 0 0 12px; color: #393b30; }
+.tour-location-copy > p:not(.corridor-eyebrow) { font-size: 11px; line-height: 1.8; color: #7c7057; margin: 0; }
+.tour-location-copy small { display: block; font-family: var(--font-hand); color: #93805b; font-size: 11px; line-height: 1.6; margin-top: 11px; }
+.tour-room-copy { width: 280px; }
+.tour-control-dock { position: absolute; z-index: 8; bottom: 84px; left: 50%; transform: translateX(-50%); width: min(820px, calc(100% - 50px)); }
+.tour-room-map { display: flex; align-items: center; gap: 6px; padding: 8px 10px; margin-bottom: 9px; background: #fff6d5f0; border: 1px solid #bcad88; border-radius: 5px 7px 3px 6px; box-shadow: 3px 4px 0 #7f785419; backdrop-filter: blur(10px); }
+.tour-map-label { font-family: var(--font-jetbrains); font-size: 8px; letter-spacing: .15em; color: #a18b60; padding: 0 12px; margin-right: auto; }
+.tour-room-map button { min-height: 36px; padding: 9px 17px; background: transparent; border: 1px solid transparent; color: #7d7050; border-radius: 4px; font-size: 11px; display: inline-flex; gap: 10px; align-items: center; transition: background .2s; }
+.tour-room-map button span { font: 8px var(--font-jetbrains); color: #a49169; }
+.tour-room-map button:hover { background: #eee4bf; }
+.tour-room-map button[aria-current="location"] { border-color: #b7a47a; background: #ece5c5; color: #494934; }
+.tour-room-map button:disabled { opacity: .45; }
+.tour-dock-actions { display: flex; align-items: center; gap: 10px; padding: 10px; background: #fff8dfea; border: 1px solid #bcad88; border-radius: 6px 3px 7px 4px; backdrop-filter: blur(10px); box-shadow: 3px 4px 0 #7f785419; }
+.tour-dock-actions .tour-primary { margin-left: auto; }
+.tour-next { margin-left: auto; }
+.tour-walk-hint { display: inline-flex; align-items: center; gap: 8px; color: #9c8863; font-family: var(--font-jetbrains); font-size: 9px; padding: 0 12px; }
+.tour-entry-footnote { display: flex; justify-content: center; gap: 24px; color: #847958; font-size: 10px; letter-spacing: .03em; padding: 14px 18px; background: #fff6d5bd; border: 1px solid #baac8455; width: fit-content; margin: auto; border-radius: 50% / 100%; backdrop-filter: blur(4px); }
+.tour-entry-footnote > span + span::before { content: '·'; margin-right: 24px; }
+.tour-travel-caption { position: absolute; z-index: 8; top: 27px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; color: #675e43; padding: 17px 23px; background: #fff8dfed; border: 1px solid #b6a57c; border-radius: 6px 3px 7px 4px; box-shadow: 3px 4px 0 #7f785419; font: 14px Georgia, serif; }
+.tour-travel-caption small { display: block; margin-top: 6px; font: 9px var(--font-inter); color: #9a8764; }
+.tour-travel-dots { letter-spacing: 3px; animation: tour-breathe 1s ease-in-out infinite; color: #a1936d; }
+.is-travelling .corridor-webgl button, .is-travelling .corridor-webgl a { pointer-events: none; }
+.exhibit-label { color: #454832; font-family: var(--font-inter); text-align: center; pointer-events: none; animation: exhibit-label-reveal .55s cubic-bezier(.22,1,.36,1) both; }
+.exhibit-eyebrow { margin: 0 0 8px; font: 9px var(--font-jetbrains); text-transform: uppercase; letter-spacing: .14em; color: #938052; }
+.exhibit-title { margin: 0; font: 400 29px/1.18 Georgia, serif; letter-spacing: -.025em; color: #414534; }
+.exhibit-subtitle { margin: 10px 0 0; font-size: 11px; line-height: 1.7; color: #81704d; }
+.exhibit-project-info { width: 420px; padding: 11px 16px; background: #fff8e0ec; border: 1px solid #b5a178; border-radius: 4px; box-shadow: 2px 3px 0 #9c8c6526; }
+.exhibit-project-controls { display: flex; align-items: center; justify-content: center; gap: 15px; width: 280px; padding: 9px 12px; color: #7f7153; background: #fff7ddf5; border: 1px solid #bbab80; border-radius: 5px; font-family: var(--font-inter); }
+.exhibit-project-controls button { pointer-events: auto; min-width: 41px; min-height: 36px; border: 1px solid #bdae83; border-radius: 50%; color: #756743; background: #fff8df; cursor: pointer; display: grid; place-items: center; font-size: 20px; }
+.exhibit-project-controls button:hover { background: #e8e4c6; }
+.exhibit-counter { font: 10px var(--font-jetbrains); letter-spacing: .08em; }
+.exhibit-capability-label { width: 190px; background: #fff8dff0; border: 1px solid #c0ae84; padding: 13px 12px; border-radius: 4px; }
+.exhibit-capability-label h3, .exhibit-timeline-label h3 { font: 400 21px/1.15 Georgia, serif; margin: 0 0 8px; color: #50533b; }
+.exhibit-capability-label p, .exhibit-timeline-label p { font-size: 11px; line-height: 1.65; margin: 0; color: #897452; }
+.exhibit-timeline-label { width: 196px; padding: 12px 10px; background: #fff8dfed; border: 1px solid #b8a77d; border-radius: 4px; }
+.exhibit-contact-label { width: 410px; padding: 17px 19px; border: 1px solid #b9a67b; background: #fff8dff0; border-radius: 5px; }
+.exhibit-contact-links { display: flex; gap: 14px; justify-content: center; align-items: center; margin-top: 14px; }
+.exhibit-contact-links a, .exhibit-email { pointer-events: auto; color: #697050; font-size: 12px; text-underline-offset: 4px; }
+.exhibit-contact-links a:hover, .exhibit-email:hover { color: #333e2a; }
+.exhibit-status { font: 9px var(--font-jetbrains); color: #8b7b50; letter-spacing: .08em; margin-top: 12px; }
+@keyframes tour-breathe { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+@keyframes studio-ambient-drift { from { opacity: .42; transform: translate3d(-1%, 0, 0) scale(1); } to { opacity: .72; transform: translate3d(1%, -1%, 0) scale(1.03); } }
+@keyframes studio-travel-sweep { 0% { transform: translateX(-46%) skewX(-9deg); } 100% { transform: translateX(46%) skewX(-9deg); } }
+@keyframes exhibit-label-reveal { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1150px) {
+  .tour-entry-copy { left: 30px; top: 7%; width: 270px; }
+  .tour-entry-copy h1 { font-size: 49px; }
+  .tour-entry-copy > p:not(.corridor-eyebrow) { font-size: 11px; max-width: 240px; }
+  .tour-room-map button { padding: 9px 12px; }
+  .tour-location-copy { left: 20px; top: 20px; width: 250px; padding: 14px 16px; }
+  .tour-location-copy h1 { font-size: 30px; }
+}
+@media (max-width: 820px) {
+  .tour-entry-copy { left: 25px; top: 22px; width: 280px; }
+  .tour-entry-copy h1 { font-size: 43px; }
+  .tour-entry-copy > small { display: none; }
+  .tour-entry-actions { margin-top: 15px; gap: 7px; }
+  .tour-map-label { display: none; }
+  .tour-room-map { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 6px; gap: 1px; }
+  .tour-room-map button { justify-content: center; gap: 7px; padding: 9px 7px; font-size: 10px; }
+  .tour-walk-hint { display: none; }
+  .tour-dock-actions > .tour-primary { margin-left: auto; }
+  .tour-location-copy { width: 240px; }
+}
+@media (max-width: 520px) {
+  .virtual-tour { min-height: 670px; }
+  .tour-entry-copy { top: 20px; left: 21px; width: 295px; }
+  .tour-entry-copy .corridor-eyebrow { font-size: 7px; margin-bottom: 10px; }
+  .tour-entry-copy h1 { font-size: 38px; line-height: 1.02; margin-bottom: 10px; }
+  .tour-entry-copy h1 br { display: none; }
+  .tour-entry-copy > p:not(.corridor-eyebrow) { font-size: 10px; line-height: 1.8; max-width: 270px; margin-bottom: 10px; }
+  .tour-entry-actions { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 11px; }
+  .tour-primary, .tour-secondary { min-height: 43px; padding: 11px 12px; font-size: 10px; gap: 8px; }
+  .tour-entry-actions .tour-primary { font-size: 10px; }
+  .tour-guided-link { font-size: 9px; gap: 5px; }
+  .tour-guided-link svg { width: 12px; }
+  .tour-control-dock { width: calc(100% - 24px); bottom: 70px; }
+  .tour-entry-footnote { gap: 10px; padding: 12px 14px; font-size: 8px; }
+  .tour-entry-footnote > span + span::before { margin-right: 10px; }
+  .tour-room-map { margin-bottom: 7px; }
+  .tour-room-map button { font-size: 9px; min-height: 35px; gap: 4px; }
+  .tour-room-map button span { font-size: 7px; }
+  .tour-dock-actions { padding: 7px; gap: 6px; }
+  .tour-dock-actions > button { font-size: 9px; flex: 1; padding: 10px 7px; gap: 5px; }
+  .tour-dock-actions > button svg { width: 13px; flex-shrink: 0; }
+  .tour-location-copy { top: 17px; left: 16px; padding: 12px 14px; width: 260px; }
+  .tour-location-copy h1 { font-size: 29px; margin-bottom: 8px; }
+  .tour-location-copy p:not(.corridor-eyebrow) { font-size: 10px; }
+  .tour-location-copy small { display: none; }
+  .tour-location-copy .corridor-eyebrow { font-size: 7px; margin-bottom: 10px; }
+  .tour-travel-caption { top: 21px; width: calc(100% - 40px); padding: 13px 16px; font-size: 13px; }
+  .tour-travel-caption small { font-size: 8px; }
+  .tour-travel-dots { margin-left: auto; }
+  .virtual-tour .corridor-controls { gap: 10px; }
+}
+
+
+.exhibit-project-controls { margin: 13px auto 0; width: 100%; }
+.exhibit-project-controls a { display: inline-flex; align-items: center; gap: 5px; color: #74653f; font-size: 10px; text-underline-offset: 4px; }
+.exhibit-project-controls button, .exhibit-project-controls a, .exhibit-contact-links a, .exhibit-email { pointer-events: auto; }
+.exhibit-contact-links a, .exhibit-email { display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+.exhibit-email { margin-top: 12px; }
+.studio-entrance-action:focus-visible, .exhibit-project-controls button:focus-visible, .exhibit-project-controls a:focus-visible { outline: 2px solid #65724e; outline-offset: 5px; }
+

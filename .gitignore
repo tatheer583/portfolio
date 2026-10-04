@@ -5,6 +5,7 @@ node_modules
 
 # Testing
 coverage
+artifacts/sketch-preview/
 
 # Next.js
 .next/

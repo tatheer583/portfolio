@@ -1,0 +1,92 @@
+[
+  {
+    "name": "portfolio",
+    "description": null,
+    "html_url": "https://github.com/tatheer583/portfolio",
+    "fork": false,
+    "archived": false,
+    "language": "TypeScript",
+    "homepage": ""
+  },
+  {
+    "name": "psl-sign-learn",
+    "description": "Pakistan Sign Language learning game for deaf children — 37 Urdu letters, offline camera recognition, ready-to-install APK",
+    "html_url": "https://github.com/tatheer583/psl-sign-learn",
+    "fork": false,
+    "archived": false,
+    "language": "Kotlin",
+    "homepage": ""
+  },
+  {
+    "name": "WIWAVE-MOTION",
+    "description": "WiWave - WiFi radar & WiFi sensing dashboard for Windows. Real-time WiFi motion detection from RSSI + ESP32 CSI (channel state information): multi-link fusion, spectral analysis, event journal & 3D observatory. Local-first, open-source.",
+    "html_url": "https://github.com/tatheer583/WIWAVE-MOTION",
+    "fork": false,
+    "archived": false,
+    "language": "Python",
+    "homepage": ""
+  },
+  {
+    "name": "jarvis-ai-assistant",
+    "description": "Python desktop AI assistant with voice commands, browser automation, remote access, and self-healing runtime improvements.",
+    "html_url": "https://github.com/tatheer583/jarvis-ai-assistant",
+    "fork": false,
+    "archived": false,
+    "language": "Python",
+    "homepage": null
+  },
+  {
+    "name": "Cyber-Sathi",
+    "description": null,
+    "html_url": "https://github.com/tatheer583/Cyber-Sathi",
+    "fork": false,
+    "archived": false,
+    "language": "Python",
+    "homepage": null
+  },
+  {
+    "name": "Medi-Connect-",
+    "description": null,
+    "html_url": "https://github.com/tatheer583/Medi-Connect-",
+    "fork": false,
+    "archived": false,
+    "language": "Dart",
+    "homepage": null
+  },
+  {
+    "name": "My-personal-finance-manager",
+    "description": "As a student, this software is one of the most useful tools to manage money, track expenses, savings, and plan a better budget.",
+    "html_url": "https://github.com/tatheer583/My-personal-finance-manager",
+    "fork": false,
+    "archived": false,
+    "language": "TypeScript",
+    "homepage": "https://tatheer583.github.io/My-personal-finance-manager/"
+  },
+  {
+    "name": "E-Nose-system-",
+    "description": "An AI-powered digital olfactory system that fuses multi-gas sensing with machine intelligence to provide real-time atmospheric safety and clarity. A visionary IoT guardian designed to secure schools, offices, and public spaces through the power of predictive environmental monitoring",
+    "html_url": "https://github.com/tatheer583/E-Nose-system-",
+    "fork": false,
+    "archived": false,
+    "language": "Python",
+    "homepage": ""
+  },
+  {
+    "name": "Khidmat-App",
+    "description": null,
+    "html_url": "https://github.com/tatheer583/Khidmat-App",
+    "fork": false,
+    "archived": false,
+    "language": "Dart",
+    "homepage": null
+  },
+  {
+    "name": "Skardu-Spring-",
+    "description": "Premium Pakistani mineral water sourced from the Karakoram glaciers of Gilgit-Baltistan, naturally filtered for 10,000 years through ancient mountain rock. pH 7.5, ISO and WHO certified.",
+    "html_url": "https://github.com/tatheer583/Skardu-Spring-",
+    "fork": false,
+    "archived": false,
+    "language": "JavaScript",
+    "homepage": "https://skardu-spring-frontend.vercel.app"
+  }
+]
