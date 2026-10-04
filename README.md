@@ -62,5 +62,5 @@ Copy `.env.example` to `.env.local` and supply `RESEND_API_KEY` and `CONTACT_EMA
 
 Set `NEXT_PUBLIC_SITE_URL` to the final public domain before deploying, so canonical links and the generated sitemap use the correct address. The downloadable résumé remains at `/resume`, which redirects to the existing PDF.
 
-The redesign is implemented locally. Publishing requires deploying this Next.js project to your hosting account.
+Pushing to `main` also runs `.github/workflows/deploy-pages.yml`. It creates a static GitHub Pages artifact at `https://tatheer583.github.io/portfolio/`, prefixes the project-site asset paths, and keeps the server-only API routes out of that artifact. For full contact-form email delivery and live GitHub statistics, deploy the unchanged server build to a Next.js host such as Vercel; the Pages build keeps the direct WhatsApp and email links available.
 
