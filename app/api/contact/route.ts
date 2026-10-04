@@ -11,6 +11,13 @@ const schema = z.object({
   company: z.string().max(200).optional(),
 })
 
+export async function GET() {
+  return NextResponse.json(
+    { emailDelivery: Boolean(process.env.RESEND_API_KEY && process.env.CONTACT_EMAIL) },
+    { headers: { 'Cache-Control': 'no-store' } }
+  )
+}
+
 export async function POST(req: NextRequest) {
   const ip =
     req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||

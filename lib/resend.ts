@@ -15,14 +15,14 @@ export async function sendContactEmail(data: {
   try {
     const { Resend } = await import('resend')
     const resend = new Resend(apiKey)
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: 'Portfolio <onboarding@resend.dev>',
       to,
       replyTo: data.email,
       subject: `Portfolio Contact: ${data.subject}`,
       text: `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`,
     })
-    return { success: true }
+    return { success: !result.error && Boolean(result.data?.id) }
   } catch {
     return { success: false }
   }

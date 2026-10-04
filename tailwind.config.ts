@@ -6,14 +6,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: { DEFAULT: '#0A0A0A', surface: '#111111', elevated: '#1A1A1A' },
-        line: { DEFAULT: '#2A2A2A', highlight: '#3A3A3A' },
+        bg: { DEFAULT: 'var(--bg)', surface: 'var(--bg-surface)', elevated: 'var(--bg-elevated)' },
+        line: { DEFAULT: 'var(--border)', highlight: 'var(--border-highlight)' },
         accent: {
-          DEFAULT: '#6C63FF',
-          light: '#A78BFA',
-          glow: 'rgba(108,99,255,0.15)',
+          DEFAULT: '#695b36',
+          light: '#7c6940',
+          glow: 'rgba(105,91,54,0.15)',
         },
-        content: { primary: '#FAFAFA', secondary: '#A0A0A0', muted: '#606060' },
+        content: { primary: 'var(--text-primary)', secondary: 'var(--text-secondary)', muted: 'var(--text-muted)' },
       },
       fontFamily: {
         display: ['var(--font-syne)', 'sans-serif'],

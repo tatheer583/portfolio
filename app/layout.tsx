@@ -1,35 +1,11 @@
 import type { Metadata } from 'next'
-import { Syne, Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import './tour.css'
+import './studio.css'
+import './studio-navigation.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
-import { Navigation } from '@/components/layout/Navigation'
-import { Footer } from '@/components/layout/Footer'
-import { LoadingScreen } from '@/components/shared/LoadingScreen'
-import { ScrollProgress } from '@/components/shared/ScrollProgress'
-import { GlowCursor } from '@/components/shared/GlowCursor'
-import { SearchModal } from '@/components/features/SearchModal/SearchModal'
 import { SITE } from '@/lib/constants'
-
-const syne = Syne({
-  subsets: ['latin'],
-  weight: ['700', '800'],
-  display: 'swap',
-  variable: '--font-syne',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  display: 'swap',
-  variable: '--font-inter',
-})
-
-const jetbrains = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  display: 'swap',
-  variable: '--font-jetbrains',
-})
+import SiteChrome from '@/components/corridor/SiteChrome'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.siteUrl),
@@ -100,16 +76,10 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${syne.variable} ${inter.variable} ${jetbrains.variable}`}>
+    <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider>
-          <LoadingScreen />
-          <ScrollProgress />
-          <GlowCursor />
-          <Navigation />
-          <SearchModal />
-          {children}
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
         <script
           type="application/ld+json"
