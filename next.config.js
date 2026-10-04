@@ -1,4 +1,4 @@
-const isGithubPages = process.env.GITHUB_PAGES === '1'
+const isGithubPages = process.env.PORTFOLIO_GITHUB_PAGES === '1'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAGES: '1'
+      PORTFOLIO_GITHUB_PAGES: '1'
       NEXT_PUBLIC_GITHUB_PAGES: '1'
       NEXT_PUBLIC_GITHUB_USERNAME: tatheer583
       NEXT_PUBLIC_SITE_URL: https://tatheer583.github.io/portfolio
