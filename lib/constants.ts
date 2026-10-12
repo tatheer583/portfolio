@@ -28,10 +28,12 @@ export type ProfileImageSrc = typeof SITE.profileImage | typeof SITE.profileFall
 
 export const NAV_LINKS = [
   { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Achievements', href: '#achievements' },
+  { label: 'Certificates', href: '#certificates' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Interests', href: '#interests' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ] as const
 

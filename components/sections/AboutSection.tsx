@@ -57,15 +57,15 @@ export function AboutSection() {
         </motion.div>
 
         <div>
-          <p className="text-base leading-relaxed text-content-secondary">
+          <p className="text-base sm:text-lg font-medium italic leading-relaxed text-white">
             My niche is full stack development: turning ideas into reliable, polished web apps with
             React, Next.js, Node/FastAPI, and modern databases. AI agents, computer vision, and
             security skills sit on top of that foundation — so products stay useful, shippable, and
             production-minded.
           </p>
-          <p className="mt-4 text-base leading-relaxed text-content-secondary">
+          <p className="mt-4 text-base sm:text-lg font-medium italic leading-relaxed text-white">
             Over the last two years I have focused on shipping real projects end-to-end, while also
-            growing junior security analyst skills around web testing and AI-assisted threat detection.
+            growing applied AI engineering and security analyst skills around web testing and AI-assisted threat detection.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -74,10 +74,10 @@ export function AboutSection() {
                 key={s.label}
                 className="rounded-xl border border-line bg-bg-surface p-4 transition-all hover:border-accent/30 hover:card-hover-glow"
               >
-                <p className="font-mono text-2xl font-bold text-gradient">
+                <p className="font-mono text-3xl font-extrabold text-cyan-400">
                   <AnimatedCounter to={s.to} suffix={s.suffix} />
                 </p>
-                <p className="mt-1 text-xs text-content-muted">{s.label}</p>
+                <p className="mt-1 text-xs sm:text-sm font-medium italic text-zinc-300">{s.label}</p>
               </div>
             ))}
           </div>
@@ -89,8 +89,8 @@ export function AboutSection() {
                 className="rounded-xl border border-line bg-bg-surface p-4 transition-all hover:-translate-y-1 hover:border-accent/30"
               >
                 <item.icon className="h-5 w-5 text-accent" />
-                <h3 className="mt-3 font-display text-sm font-bold text-content-primary">{item.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-content-secondary">{item.description}</p>
+                <h3 className="mt-3 font-display text-base font-bold text-white">{item.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm font-medium italic leading-relaxed text-white/90">{item.description}</p>
               </div>
             ))}
           </div>

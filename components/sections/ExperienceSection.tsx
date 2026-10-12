@@ -42,11 +42,11 @@ export function ExperienceSection() {
                   left ? 'md:mr-auto' : 'md:ml-auto'
                 )}
               >
-                <span className="font-mono text-xs text-accent-light">{item.period}</span>
-                <h3 className="mt-1 font-display text-lg font-bold text-content-primary">
+                <span className="font-mono text-xs font-bold text-cyan-400">{item.period}</span>
+                <h3 className="mt-1 font-display text-xl font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-content-secondary">
+                <p className="mt-2 text-base font-medium italic leading-relaxed text-white">
                   {item.description}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">

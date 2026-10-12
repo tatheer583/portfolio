@@ -27,30 +27,30 @@ export function Footer() {
       <div className="mx-auto grid max-w-container gap-10 px-6 py-12 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-accent/40 bg-accent/10 font-display text-sm font-extrabold text-gradient">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 bg-white/10 font-display text-sm font-extrabold text-white">
               MT
             </span>
-            <span className="font-display text-base font-bold text-content-primary">
+            <span className="font-display text-base font-bold text-white">
               {SITE.name}
             </span>
           </div>
-          <p className="mt-4 max-w-xs text-sm text-content-secondary">{SITE.tagline}</p>
-          <div className="mt-4 space-y-2 text-sm text-content-secondary">
-            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 hover:text-accent">
-              <Mail className="h-4 w-4" /> {SITE.email}
+          <p className="mt-4 max-w-xs text-sm italic font-medium text-white">{SITE.tagline}</p>
+          <div className="mt-4 space-y-2 text-sm italic text-white">
+            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 hover:text-white">
+              <Mail className="h-4 w-4 text-white" /> {SITE.email}
             </a>
-            <a href={`tel:${SITE.phone.replace(/[^+\d]/g, '')}`} className="flex items-center gap-2 hover:text-accent">
-              <Phone className="h-4 w-4" /> {SITE.phone}
+            <a href={`tel:${SITE.phone.replace(/[^+\d]/g, '')}`} className="flex items-center gap-2 hover:text-white">
+              <Phone className="h-4 w-4 text-white" /> {SITE.phone}
             </a>
           </div>
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-content-primary">Navigation</h3>
+          <h3 className="text-base font-bold text-white">Navigation</h3>
           <ul className="mt-4 space-y-2">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="text-sm text-content-secondary transition-colors hover:text-accent">
+                <a href={link.href} className="text-sm italic text-white transition-colors hover:underline">
                   {link.label}
                 </a>
               </li>
@@ -59,7 +59,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-content-primary">Connect</h3>
+          <h3 className="text-base font-bold text-white">Connect</h3>
           <div className="mt-4 flex gap-3">
             {SOCIAL_LINKS.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-content-secondary transition-colors hover:border-accent/40 hover:text-accent">

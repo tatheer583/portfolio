@@ -45,10 +45,10 @@ export function AchievementsSection() {
                 <Icon className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="font-display text-base font-bold text-content-primary">
+                <h3 className="font-display text-lg font-bold text-white">
                   {ach.title}
                 </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-content-secondary">
+                <p className="mt-1.5 text-base font-medium italic leading-relaxed text-white">
                   {ach.description}
                 </p>
               </div>

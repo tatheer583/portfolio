@@ -9,9 +9,9 @@ const config: Config = {
         bg: { DEFAULT: 'var(--bg)', surface: 'var(--bg-surface)', elevated: 'var(--bg-elevated)' },
         line: { DEFAULT: 'var(--border)', highlight: 'var(--border-highlight)' },
         accent: {
-          DEFAULT: '#695b36',
-          light: '#7c6940',
-          glow: 'rgba(105,91,54,0.15)',
+          DEFAULT: 'var(--accent)',
+          light: 'var(--accent-light)',
+          glow: 'rgba(99,102,241,0.2)',
         },
         content: { primary: 'var(--text-primary)', secondary: 'var(--text-secondary)', muted: 'var(--text-muted)' },
       },

@@ -38,10 +38,10 @@ export function Navigation() {
     >
       <nav className="mx-auto flex h-16 max-w-container items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2" aria-label="Muhammad Tatheer home">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-accent/40 bg-accent/10 font-display text-sm font-extrabold text-gradient">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 bg-white/10 font-display text-sm font-extrabold text-white">
             MT
           </span>
-          <span className="hidden font-display text-base font-bold text-content-primary sm:block">
+          <span className="hidden font-display text-base font-bold text-white sm:block">
             {SITE.name}
           </span>
         </Link>
@@ -55,15 +55,15 @@ export function Navigation() {
                 key={link.href}
                 href={sectionHref(link.href)}
                 className={cn(
-                  'relative text-sm font-medium transition-colors hover:text-content-primary',
-                  active ? 'text-content-primary' : 'text-content-secondary'
+                  'relative text-sm font-medium transition-colors hover:text-white',
+                  active ? 'text-white font-bold' : 'text-zinc-200'
                 )}
               >
                 {link.label}
                 {active && (
                   <motion.span
                     layoutId="nav-underline"
-                    className="absolute -bottom-1.5 left-0 h-0.5 w-full rounded-full bg-accent"
+                    className="absolute -bottom-1.5 left-0 h-0.5 w-full rounded-full bg-white shadow-[0_0_8px_#ffffff]"
                   />
                 )}
               </a>

@@ -8,6 +8,7 @@ import { ArrowRight, ExternalLink, Github } from 'lucide-react'
 import type { Project } from '@/types/project'
 import { Card } from '@/components/ui/card'
 import { TechChip } from '@/components/shared/TechChip'
+import { RealProjectMockup } from '@/components/shared/RealProjectMockup'
 import { cn } from '@/lib/utils'
 
 interface ProjectCardProps {
@@ -87,39 +88,24 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       transition={{ type: 'spring', stiffness: 300, damping: 24 }}
       className={cn('h-full', className)}
     >
-      <Card hoverable variant="glow" className="group flex h-full flex-col overflow-hidden p-0">
+      <Card hoverable variant="glow" className="group flex h-full flex-col overflow-hidden p-0 border border-white/10 bg-[#0c0e15]">
         <Link href={`/projects/${project.slug}`} className="block focus:outline-none">
-          <div className={cn('relative aspect-[16/10] overflow-hidden bg-gradient-to-br', visual.gradient)}>
-            {!imgFailed && (
-              <Image
-                src={project.image}
-                alt={`${project.title} cover`}
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                onError={() => setImgFailed(true)}
-              />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-            <div className="absolute inset-x-5 bottom-5 rounded-xl border border-white/10 bg-black/30 p-4 backdrop-blur-md">
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-white/60">
-                {visual.label}
-              </p>
-              <p className="mt-2 font-display text-2xl font-bold text-white">{visual.metric}</p>
-            </div>
-            <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/35 px-3 py-1 text-xs font-medium text-white/90 backdrop-blur-sm">
-              {project.categoryLabel}
-            </span>
+          <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10">
+            <RealProjectMockup
+              slug={project.slug}
+              title={project.title}
+              category={project.categoryLabel}
+            />
           </div>
         </Link>
 
-        <div className="flex flex-1 flex-col p-6">
+        <div className="flex flex-1 flex-col p-5">
           <Link href={`/projects/${project.slug}`} className="focus:outline-none">
-            <h3 className="font-display text-xl font-bold text-content-primary transition-colors hover:text-accent-light">
+            <h3 className="font-display text-lg font-bold text-white transition-colors hover:text-sky-400">
               {project.title}
             </h3>
           </Link>
-          <p className="mt-2 flex-1 text-sm leading-relaxed text-content-secondary">
+          <p className="mt-2 flex-1 text-sm sm:text-base font-medium italic leading-relaxed text-white/95">
             {project.description}
           </p>
 
