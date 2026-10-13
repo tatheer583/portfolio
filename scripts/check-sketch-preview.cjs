@@ -141,7 +141,7 @@ async function main() {
           assert.match(whatsApp.searchParams.get('text'), /Preview visitor.*\nEmail: preview@example.com/);
           assert.match(whatsApp.searchParams.get('text'), /new project with you/);
           assert.equal(await page.locator('.office-contact a[href^="mailto:"]').getAttribute('href'), 'mailto:mtatheer11@gmail.com');
-          assert.equal(await page.locator('.office-contact a').filter({ hasText: 'GitHub' }).getAttribute('href'), 'https://github.com/tatheer583');
+          assert.equal(await page.locator('.office-contact a').filter({ hasText: 'GitHub' }).getAttribute('href'), 'https://github.com/tatheer583/portfolio');
           console.log('CONTACT HANDOFF PASSED');
           await page.setViewportSize({ width: 390, height: 844 });
           await page.waitForTimeout(1000);

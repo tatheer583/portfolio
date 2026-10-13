@@ -11,7 +11,7 @@ export const SITE = {
   ],
   tagline: 'Full Stack Developer building polished web products — with AI and security depth.',
   githubUsername: process.env.NEXT_PUBLIC_GITHUB_USERNAME || 'tatheer583',
-  githubUrl: 'https://github.com/tatheer583',
+  githubUrl: 'https://github.com/tatheer583/portfolio',
   linkedinUrl: 'https://linkedin.com/in/muhammadtatheer',
   email: 'mtatheer11@gmail.com',
   phone: '+92 344 8901377',

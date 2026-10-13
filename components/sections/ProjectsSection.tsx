@@ -6,6 +6,7 @@ import { Section } from '@/components/layout/Section'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { ProjectCard } from '@/components/shared/ProjectCard'
 import { PROJECTS } from '@/data/projects'
+import { SITE } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 
 const FILTERS = [
@@ -67,7 +68,7 @@ export function ProjectsSection() {
 
       <div className="mt-10 text-center">
         <a
-          href="https://github.com/tatheer583"
+          href={SITE.githubUrl}
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent-light"

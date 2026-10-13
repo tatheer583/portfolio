@@ -410,7 +410,7 @@ const ContactRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
                 rotation={[0, 0.3, 0]}
                 texturePath="/reference/textures/contact/beczka.webp"
                 label="GITHUB"
-                onClick={() => window.open('https://github.com/tatheer583', '_blank')}
+                onClick={() => window.open(SITE.githubUrl, '_blank')}
                 paintOnBeforeCompile={onBeforeCompile}
                 paintUniforms={uniformsData}
             />
