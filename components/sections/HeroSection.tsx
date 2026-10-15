@@ -93,7 +93,7 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-5 max-w-2xl text-base font-medium italic leading-relaxed text-white"
             >
-              Hey there! I am a full-stack developer who genuinely enjoys turning ideas into clean, fast, and reliable software. Whether I'm crafting a seamless React interface, wiring up a Node or Python API, or connecting intelligent automation tools, I care about building things that real people find useful.
+              Hey there! I am a full-stack developer who genuinely enjoys turning ideas into clean, fast, and reliable software. Whether I&apos;m crafting a seamless React interface, wiring up a Node or Python API, or connecting intelligent automation tools, I care about building things that real people find useful.
             </motion.p>
 
             {/* Human Developer Badges */}

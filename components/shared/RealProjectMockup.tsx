@@ -306,7 +306,7 @@ export function RealProjectMockup({ slug, title, category }: RealProjectMockupPr
           <div className="rounded-xl border border-white/10 bg-white/5 p-2.5 text-xs text-left">
             <span className="font-mono text-[10px] text-zinc-400 block">Voice Transcript:</span>
             <p className="text-white font-medium italic">
-              "Jarvis, check server deployment status and summarize error logs."
+              &quot;Jarvis, check server deployment status and summarize error logs.&quot;
             </p>
             <p className="mt-1 font-mono text-[11px] text-emerald-400">
               ➜ Done. All 3 microservices healthy. Latency 38ms.
