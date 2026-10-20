@@ -8,17 +8,18 @@ import { Section } from '@/components/layout/Section'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
 import { SITE } from '@/lib/constants'
+import { PROJECT_STATS } from '@/data/projects'
 
 const STATS = [
-  { label: 'Projects Built', to: 11, suffix: '+' },
-  { label: 'Technologies Mastered', to: 35, suffix: '+' },
-  { label: 'GitHub Commits', to: 500, suffix: '+' },
+  { label: 'Public repositories', to: PROJECT_STATS.total, suffix: '' },
+  { label: 'GitHub stars earned', to: PROJECT_STATS.stars, suffix: '' },
+  { label: 'Technologies shipped with', to: 42, suffix: '+' },
 ]
 
 const PRINCIPLES = [
   { icon: Layers, title: 'End-to-End Builder', description: 'From model logic and APIs to polished product interfaces.' },
   { icon: Code2, title: 'Applied Engineering', description: 'Practical systems built around real user problems, not demos only.' },
-  { icon: GitCommit, title: 'Consistent Shipping', description: 'Iterating through projects, experiments, and public repositories.' },
+  { icon: GitCommit, title: 'Consistent Shipping', description: 'Every project here is public, documented and actually released.' },
 ]
 
 export function AboutSection() {
@@ -57,15 +58,16 @@ export function AboutSection() {
         </motion.div>
 
         <div>
-          <p className="text-base sm:text-lg font-medium italic leading-relaxed text-white">
+          <p className="text-base sm:text-lg font-medium leading-relaxed text-content-primary">
             My niche is full stack development: turning ideas into reliable, polished web apps with
             React, Next.js, Node/FastAPI, and modern databases. AI agents, computer vision, and
             security skills sit on top of that foundation — so products stay useful, shippable, and
             production-minded.
           </p>
-          <p className="mt-4 text-base sm:text-lg font-medium italic leading-relaxed text-white">
-            Over the last two years I have focused on shipping real projects end-to-end, while also
-            growing applied AI engineering and security analyst skills around web testing and AI-assisted threat detection.
+          <p className="mt-4 text-base sm:text-lg font-medium leading-relaxed text-content-primary">
+            Over the past year I have focused on shipping real projects end-to-end, while also
+            growing applied AI engineering and security skills around web development and
+            AI-assisted threat detection.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -74,10 +76,10 @@ export function AboutSection() {
                 key={s.label}
                 className="rounded-xl border border-line bg-bg-surface p-4 transition-all hover:border-accent/30 hover:card-hover-glow"
               >
-                <p className="font-mono text-3xl font-extrabold text-cyan-400">
+                <p className="font-mono text-3xl font-extrabold text-accent">
                   <AnimatedCounter to={s.to} suffix={s.suffix} />
                 </p>
-                <p className="mt-1 text-xs sm:text-sm font-medium italic text-zinc-300">{s.label}</p>
+                <p className="mt-1 text-xs sm:text-sm font-medium text-content-secondary">{s.label}</p>
               </div>
             ))}
           </div>
@@ -89,8 +91,8 @@ export function AboutSection() {
                 className="rounded-xl border border-line bg-bg-surface p-4 transition-all hover:-translate-y-1 hover:border-accent/30"
               >
                 <item.icon className="h-5 w-5 text-accent" />
-                <h3 className="mt-3 font-display text-base font-bold text-white">{item.title}</h3>
-                <p className="mt-2 text-xs sm:text-sm font-medium italic leading-relaxed text-white/90">{item.description}</p>
+                <h3 className="mt-3 font-display text-base font-bold text-content-primary">{item.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm font-medium leading-relaxed text-content-secondary">{item.description}</p>
               </div>
             ))}
           </div>

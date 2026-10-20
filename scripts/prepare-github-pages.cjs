@@ -9,7 +9,7 @@ if (!fs.existsSync(outDir)) {
 }
 
 const textExtensions = new Set(['.css', '.html', '.js', '.json', '.map', '.svg']);
-const rootDirectories = ['reference', 'images', 'hand-tracking', 'certificates', 'resume', 'projects', 'api'];
+const rootDirectories = ['images', 'certificates', 'resume', 'projects', 'api'];
 const rootFiles = ['icon.svg', 'og-image.png.svg', 'robots.txt', 'sitemap.xml', 'sitemap-0.xml'];
 const segmentPattern = new RegExp(
   `(?<![A-Za-z0-9_:/.-])/(${rootDirectories.join('|')})(?=[/\\s"'?#.,)\\]}]|$)`,

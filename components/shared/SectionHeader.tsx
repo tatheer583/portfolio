@@ -35,11 +35,11 @@ export function SectionHeader({
           {align === 'center' && <span className="h-px w-6 bg-accent/60" aria-hidden />}
         </p>
       )}
-      <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-white">
+      <h2 className="font-display text-2xl font-bold tracking-tight text-content-primary sm:text-3xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-2 text-sm sm:text-base font-medium italic leading-relaxed text-white/90">
+        <p className="mt-3 max-w-xl text-sm font-medium leading-relaxed text-content-secondary sm:text-base">
           {subtitle}
         </p>
       )}

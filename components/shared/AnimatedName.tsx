@@ -67,21 +67,11 @@ export function AnimatedName() {
                     opacity: 1,
                     scale: isJustTyped ? [1.3, 1] : 1,
                     y: 0,
-                    textShadow: [
-                      '0 0 12px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.3)',
-                      '0 0 20px rgba(255, 255, 255, 0.9), 0 0 36px rgba(255, 255, 255, 0.5)',
-                      '0 0 12px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.3)',
-                    ],
                   }}
                   transition={{
                     duration: 0.3,
-                    textShadow: { duration: 2.2, repeat: Infinity, ease: 'easeInOut' },
                   }}
-                  className="inline-block font-extrabold uppercase text-white"
-                  style={{
-                    color: '#ffffff',
-                    filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))',
-                  }}
+                  className="inline-block font-extrabold uppercase text-content-primary"
                 >
                   {char}
                 </motion.span>
@@ -90,11 +80,11 @@ export function AnimatedName() {
           )
         })}
 
-        {/* Clean Glowing White Typing Cursor */}
+        {/* Theme-aware glowing typing cursor */}
         <motion.span
           animate={{ opacity: [1, 0, 1] }}
           transition={{ duration: 0.75, repeat: Infinity, ease: 'linear' }}
-          className="ml-1.5 inline-block h-8 w-1 sm:h-12 sm:w-1.5 rounded-full bg-white shadow-[0_0_14px_#ffffff]"
+          className="ml-1.5 inline-block h-8 w-1 rounded-full bg-accent shadow-[0_0_14px_var(--accent)] sm:h-12 sm:w-1.5"
         />
       </div>
     </div>

@@ -44,7 +44,7 @@ export function CertificatesSection() {
               )}
               
               {/* Verified Badge */}
-              <div className="absolute top-3 right-3 flex items-center gap-1.5 rounded-full bg-bg-surface/90 px-2.5 py-1 text-[11px] font-semibold text-emerald-400 shadow-md backdrop-blur-md border border-line">
+              <div className="absolute top-3 right-3 flex items-center gap-1.5 rounded-full bg-bg-surface/90 px-2.5 py-1 text-[11px] font-semibold text-accent3 shadow-md backdrop-blur-md border border-line">
                 <CheckCircle className="h-3.5 w-3.5" />
                 <span>Verified</span>
               </div>
@@ -57,10 +57,10 @@ export function CertificatesSection() {
                   <ShieldCheck className="h-4 w-4" />
                   <span>Credential</span>
                 </div>
-                <h3 className="mt-2 text-xl font-bold text-white transition-colors group-hover:text-cyan-400">
+                <h3 className="mt-2 text-xl font-bold text-content-primary transition-colors group-hover:text-accent">
                   {cert.title}
                 </h3>
-                <p className="mt-1 text-sm font-medium italic text-zinc-200">
+                <p className="mt-1 text-sm font-medium text-content-secondary">
                   {cert.issuer}
                 </p>
               </div>

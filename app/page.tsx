@@ -1,27 +1,27 @@
 import { Navigation } from '@/components/layout/Navigation'
 import { HeroSection } from '@/components/sections/HeroSection'
+import { IntroSection } from '@/components/sections/IntroSection'
+import { TechMarquee } from '@/components/sections/TechMarquee'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { SkillsSection } from '@/components/sections/SkillsSection'
 import { ProjectsSection } from '@/components/sections/ProjectsSection'
+import { GitHubSection } from '@/components/sections/GitHubSection'
 import { CertificatesSection } from '@/components/sections/CertificatesSection'
 import { ExperienceSection } from '@/components/sections/ExperienceSection'
+import { EducationSection } from '@/components/sections/EducationSection'
 import { AchievementsSection } from '@/components/sections/AchievementsSection'
 import { InterestsSection } from '@/components/sections/InterestsSection'
-import { FAQSection } from '@/components/sections/FAQSection'
 import { HumanTouchSection } from '@/components/sections/HumanTouchSection'
+import { FAQSection } from '@/components/sections/FAQSection'
 import { ContactSection } from '@/components/sections/ContactSection'
 import { Footer } from '@/components/layout/Footer'
 import { SearchModal } from '@/components/features/SearchModal/SearchModal'
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-bg text-content-primary selection:bg-accent/25 selection:text-white">
-      {/* Deep Black & Delicate White Lines Background Grid */}
+    <div className="relative min-h-screen bg-bg text-content-primary selection:bg-accent/25 selection:text-content-primary">
+      {/* Ambient page backdrop */}
       <div className="pointer-events-none fixed inset-0 grid-pattern opacity-40 z-0" />
-
-      {/* Subtle Overhead Ambient Skylight (Gentle skylight glow, not full/harsh) */}
-      <div className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 w-[720px] max-w-full h-[280px] bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.13),transparent_70%)] blur-2xl z-0" />
-      <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-transparent via-bg/30 to-bg/90 z-0" />
 
       {/* Top Fixed Navigation */}
       <Navigation />
@@ -30,6 +30,12 @@ export default function HomePage() {
       <main className="relative z-10 flex flex-col">
         {/* Hero Landing Section */}
         <HeroSection />
+
+        {/* Introduction — who I am and what I actually build */}
+        <IntroSection />
+
+        {/* Animated technology ticker */}
+        <TechMarquee />
 
         {/* About Me Section */}
         <AboutSection />
@@ -40,11 +46,17 @@ export default function HomePage() {
         {/* Projects Section */}
         <ProjectsSection />
 
+        {/* Live GitHub Activity */}
+        <GitHubSection />
+
         {/* Verified Certificates & Honors */}
         <CertificatesSection />
 
         {/* Experience Timeline */}
         <ExperienceSection />
+
+        {/* Education */}
+        <EducationSection />
 
         {/* Milestones & Achievements */}
         <AchievementsSection />

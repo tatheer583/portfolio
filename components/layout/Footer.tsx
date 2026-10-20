@@ -4,13 +4,16 @@ import * as React from 'react'
 import { ArrowUp, Mail, Phone } from 'lucide-react'
 import { NAV_LINKS, SITE, SOCIAL_LINKS } from '@/lib/constants'
 
-function SocialIcon({ icon }: { icon: 'github' | 'linkedin' }) {
+function SocialIcon({ icon }: { icon: 'github' | 'linkedin' | 'email' }) {
   if (icon === 'github') {
     return (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden>
         <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
       </svg>
     )
+  }
+  if (icon === 'email') {
+    return <Mail className="h-5 w-5" aria-hidden />
   }
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden>
@@ -27,30 +30,30 @@ export function Footer() {
       <div className="mx-auto grid max-w-container gap-10 px-6 py-12 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 bg-white/10 font-display text-sm font-extrabold text-white">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-bg-elevated font-display text-sm font-extrabold text-content-primary">
               MT
             </span>
-            <span className="font-display text-base font-bold text-white">
+            <span className="font-display text-base font-bold text-content-primary">
               {SITE.name}
             </span>
           </div>
-          <p className="mt-4 max-w-xs text-sm italic font-medium text-white">{SITE.tagline}</p>
-          <div className="mt-4 space-y-2 text-sm italic text-white">
-            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 hover:text-white">
-              <Mail className="h-4 w-4 text-white" /> {SITE.email}
+          <p className="mt-4 max-w-xs text-sm font-medium text-content-primary">{SITE.tagline}</p>
+          <div className="mt-4 space-y-2 text-sm text-content-primary">
+            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 hover:text-content-primary">
+              <Mail className="h-4 w-4 text-content-primary" /> {SITE.email}
             </a>
-            <a href={`tel:${SITE.phone.replace(/[^+\d]/g, '')}`} className="flex items-center gap-2 hover:text-white">
-              <Phone className="h-4 w-4 text-white" /> {SITE.phone}
+            <a href={`tel:${SITE.phone.replace(/[^+\d]/g, '')}`} className="flex items-center gap-2 hover:text-content-primary">
+              <Phone className="h-4 w-4 text-content-primary" /> {SITE.phone}
             </a>
           </div>
         </div>
 
         <div>
-          <h3 className="text-base font-bold text-white">Navigation</h3>
+          <h3 className="text-base font-bold text-content-primary">Navigation</h3>
           <ul className="mt-4 space-y-2">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="text-sm italic text-white transition-colors hover:underline">
+                <a href={link.href} className="text-sm text-content-primary transition-colors hover:underline">
                   {link.label}
                 </a>
               </li>
@@ -59,7 +62,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-base font-bold text-white">Connect</h3>
+          <h3 className="text-base font-bold text-content-primary">Connect</h3>
           <div className="mt-4 flex gap-3">
             {SOCIAL_LINKS.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-content-secondary transition-colors hover:border-accent/40 hover:text-accent">

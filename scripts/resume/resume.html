@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Muhammad Tatheer — Résumé</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @page {
+        size: A4;
+        margin: 13mm 14mm 12mm;
+      }
+
+      :root {
+        --ink: #1b2130;
+        --muted: #5a6474;
+        --rule: #d8dde6;
+        --accent: #1d4ed8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+        font-size: 9.4pt;
+        line-height: 1.42;
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 7px;
+        margin-bottom: 11px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 23pt;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        line-height: 1.05;
+      }
+
+      .role {
+        margin: 3px 0 5px;
+        font-size: 10.2pt;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px 14px;
+        font-size: 8.6pt;
+        color: var(--muted);
+      }
+
+      .contact span::before {
+        content: "";
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--rule);
+        margin-right: 7px;
+        vertical-align: 2px;
+      }
+
+      .contact span:first-child::before {
+        display: none;
+      }
+
+      section {
+        margin-top: 11px;
+      }
+
+      h2 {
+        margin: 0 0 6px;
+        font-size: 8.4pt;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--accent);
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 3px;
+      }
+
+      p {
+        margin: 0 0 5px;
+        orphans: 2;
+        widows: 2;
+      }
+
+      .entry {
+        margin-bottom: 8px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+        gap: 2px 14px;
+        align-items: baseline;
+      }
+
+      .entry-title {
+        font-weight: 700;
+        font-size: 9.8pt;
+      }
+
+      .entry-meta {
+        font-size: 8.4pt;
+        color: var(--muted);
+        text-align: right;
+        overflow-wrap: break-word;
+      }
+
+      .stack {
+        font-size: 8.4pt;
+        color: var(--muted);
+        margin: 1px 0 3px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 13px;
+      }
+
+      li {
+        margin-bottom: 1.5px;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: 26mm 1fr;
+        gap: 2px 10px;
+        font-size: 9.1pt;
+        break-inside: avoid;
+      }
+
+      .skills dt {
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .skills dd {
+        margin: 0;
+        color: #333a48;
+      }
+
+      .callout {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+        margin-top: 2px;
+      }
+
+      .callout div {
+        border: 1px solid var(--rule);
+        border-left: 3px solid var(--accent);
+        padding: 5px 7px;
+      }
+
+      .callout strong {
+        display: block;
+        font-size: 13pt;
+        line-height: 1.1;
+      }
+
+      .callout span {
+        font-size: 7.9pt;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
+
+      .footnote {
+        margin-top: 12px;
+        padding-top: 5px;
+        border-top: 1px solid var(--rule);
+        font-size: 7.9pt;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Muhammad Tatheer</h1>
+      <p class="role">Full Stack Developer — Web, Mobile, Applied AI &amp; IoT</p>
+      <div class="contact">
+        <span>Islamabad, Pakistan</span>
+        <span><a href="mailto:mtatheer1@gmail.com">mtatheer1@gmail.com</a></span>
+        <span><a href="tel:+923492899537">+92 349 2899537</a></span>
+        <span><a href="https://github.com/tatheer583">github.com/tatheer583</a></span>
+        <span><a href="https://linkedin.com/in/muhammadtatheer">linkedin.com/in/muhammadtatheer</a></span>
+        <span><a href="https://tatheer583.github.io/portfolio/">tatheer583.github.io/portfolio</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p>
+        Full stack developer who ships complete, documented products — React and Next.js frontends,
+        Node/Express and FastAPI services, Flutter and Kotlin apps, and applied AI that runs on-device
+        where privacy matters. Eleven public repositories, five live deployments and a consistent habit
+        of publishing the honest limits of a build alongside its features.
+      </p>
+      <div class="callout">
+        <div><strong>11</strong><span>Public repositories</span></div>
+        <div><strong>40</strong><span>GitHub stars</span></div>
+        <div><strong>5</strong><span>Live deployments</span></div>
+        <div><strong>6</strong><span>Languages shipped</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Irssa — Pakistan Sign Language Learning App</span>
+          <span class="entry-meta">Kotlin · Jetpack Compose · MediaPipe</span>
+        </div>
+        <p class="stack">Offline Android app for deaf and speech-impaired children · github.com/tatheer583/psl-sign-learn</p>
+        <ul>
+          <li>
+            Teaches 37 Urdu Pakistan Sign Language letters and 26 English letters as separate alphabets,
+            using real hand photographs and familiar words.
+          </li>
+          <li>
+            On-device camera coach built on MediaPipe Hand Landmarker (21 landmarks) with a
+            nearest-neighbour classifier trained on independent signers; frames never leave the device.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">ChannelAI — Open Source Channel Automation</span>
+          <span class="entry-meta">TypeScript · React · Canvas · YouTube API</span>
+        </div>
+        <p class="stack">MIT-licensed, self-hostable video workflow · github.com/tatheer583/channel-automation-ai</p>
+        <ul>
+          <li>
+            Renders reels genuinely in the browser with canvas crop and MediaRecorder, exports timed SRT
+            and VTT captions, and captures full-resolution thumbnails.
+          </li>
+          <li>
+            Schedules publishing through the official YouTube Data API with the user's own OAuth client;
+            footage is never uploaded to a third-party service.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">WiWave Motion — WiFi Sensing Workbench</span>
+          <span class="entry-meta">Python · FastAPI · React · ESP32</span>
+        </div>
+        <p class="stack">Device-free motion sensing with a laptop radio · github.com/tatheer583/WIWAVE-MOTION</p>
+        <ul>
+          <li>
+            Samples RSSI about ten times per second through the Windows WLAN API and fuses the router with
+            neighbouring access points as independent environment channels.
+          </li>
+          <li>
+            Adds 30-second Welch spectral analysis, a SQLite event journal with before/after context, and a
+            52-subcarrier CSI pipeline for an optional ESP32 receiver.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Jarvis — Local Windows Desktop Assistant</span>
+          <span class="entry-meta">Tauri · Rust · React · Python</span>
+        </div>
+        <p class="stack">Voice and typed automation with an explicit policy boundary · github.com/tatheer583/jarvis-ai-assistant</p>
+        <ul>
+          <li>
+            Controls applications, windows, keyboard, mouse, volume and files, with confirmation prompts
+            before any destructive operation and a separate audit database.
+          </li>
+          <li>
+            Deterministic commands work with no API key; offline Whisper speech recognition and local
+            Qwen chat are optional add-ons, not requirements.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Skardu Spring — Full-Stack Commerce Platform</span>
+          <span class="entry-meta">Next.js 15 · Express · MongoDB</span>
+        </div>
+        <p class="stack">Monorepo storefront and API for a Karakoram mineral water brand · skardu-spring-frontend.vercel.app</p>
+        <ul>
+          <li>
+            Next.js 15 App Router storefront with a glassmorphism design system, Framer Motion transitions
+            and Swiper carousels.
+          </li>
+          <li>
+            Modular Express API with JWT authentication, bcrypt hashing and Mongoose models, plus an
+            OpenAI-powered concierge behind dedicated service layers.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">CyberSathi — Offline AI Scam Analyzer</span>
+          <span class="entry-meta">Python · FastAPI · Ollama · SQLite</span>
+        </div>
+        <p class="stack">Local threat analysis for messages, email, QR codes and URLs · github.com/tatheer583/Cyber-Sathi</p>
+        <ul>
+          <li>
+            Runs a local Gemma model through Ollama alongside deterministic checks for sender domains,
+            malware, OTP requests and a blocklist of known scam domains.
+          </li>
+          <li>
+            Scans persist locally through SQLAlchemy, and the React PWA supports English, Urdu and Roman
+            Urdu — with no cloud LLM in the detection path.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt>
+        <dd>TypeScript, JavaScript, Python, Dart, Kotlin, Rust, SQL, HTML/CSS</dd>
+        <dt>Frontend</dt>
+        <dd>React 19, Next.js 14/15, Tailwind CSS, Framer Motion, Vite, CSS Modules, D3.js</dd>
+        <dt>Backend</dt>
+        <dd>Node.js, Express, FastAPI, Flask, REST APIs, JWT authentication, WebSockets</dd>
+        <dt>Mobile &amp; Desktop</dt>
+        <dd>Flutter, Jetpack Compose, Tauri, Riverpod, go_router</dd>
+        <dt>Data</dt>
+        <dd>MongoDB, Mongoose, SQLite, SQLAlchemy, local-first persistence</dd>
+        <dt>AI &amp; Vision</dt>
+        <dd>MediaPipe, scikit-learn, Random Forest, Ollama, Gemma, OpenAI API, Whisper</dd>
+        <dt>IoT &amp; Sensing</dt>
+        <dd>ESP32, Arduino, MQ gas arrays, WiFi RSSI and CSI, real-time pipelines</dd>
+        <dt>Tooling</dt>
+        <dd>Git, GitHub Actions, Docker, Vercel, GitHub Pages, Playwright</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">NUTECH University — Bachelor of Science</span>
+          <span class="entry-meta">2025 — 2029 · Islamabad, Pakistan</span>
+        </div>
+        <p class="stack">Computing, intelligent systems and applied engineering.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Public School and College Skardu — Intermediate</span>
+          <span class="entry-meta">2023 — 2025 · Skardu, Pakistan</span>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Model Boys High School, Khaplu — Matriculation</span>
+          <span class="entry-meta">2021 — 2023 · Gilgit-Baltistan, Pakistan</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Open Source &amp; Recognition</h2>
+      <ul>
+        <li>Eleven public repositories with 40 stars and 2 forks; five projects deployed and linked live.</li>
+        <li>Released ChannelAI and CyberSathi under the MIT licence, including setup documentation and known limits.</li>
+        <li>Built an accessibility-first product (Irssa) for deaf children with a fully offline recognition model.</li>
+        <li>Comfortable working across time zones; based in Islamabad (UTC+5), open to full-time and freelance work.</li>
+      </ul>
+    </section>
+
+    <p class="footnote">
+      Every project above is public and verifiable at github.com/tatheer583. Live demos, source code and
+      documentation are linked from tatheer583.github.io/portfolio.
+    </p>
+  </body>
+</html>

@@ -15,10 +15,10 @@ export function ExperienceSection() {
       <SectionHeader
         eyebrow="Journey"
         title="Experience & Growth"
-        subtitle="A 2-year journey focused on becoming a strong full stack developer — with AI and security as supporting strengths."
+        subtitle="From learning the fundamentals to shipping complete products — web, mobile, AI and IoT."
       />
 
-      <div className="relative mx-auto max-w-3xl">
+      <div className="relative mx-auto max-w-5xl">
         <div className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-accent via-accent/40 to-transparent md:left-1/2" />
 
         {EXPERIENCE.map((item, i) => {
@@ -42,11 +42,11 @@ export function ExperienceSection() {
                   left ? 'md:mr-auto' : 'md:ml-auto'
                 )}
               >
-                <span className="font-mono text-xs font-bold text-cyan-400">{item.period}</span>
-                <h3 className="mt-1 font-display text-xl font-bold text-white">
+                <span className="font-mono text-xs font-bold text-accent">{item.period}</span>
+                <h3 className="mt-1 font-display text-xl font-bold text-content-primary">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-base font-medium italic leading-relaxed text-white">
+                <p className="mt-2 text-base font-medium leading-relaxed text-content-primary">
                   {item.description}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">

@@ -12,7 +12,7 @@ const buttonVariants = cva(
           'bg-accent text-white hover:bg-accent/90 accent-glow hover:shadow-[0_0_40px_rgba(108,99,255,0.5)]',
         outline:
           'border border-accent/50 text-accent hover:bg-accent/10 hover:border-accent',
-        ghost: 'text-content-secondary hover:text-content-primary hover:bg-white/5',
+        ghost: 'text-content-secondary hover:text-content-primary hover:bg-bg-elevated',
         accent:
           'bg-gradient-to-r from-accent to-accent-light text-white hover:opacity-90 accent-glow',
         secondary: 'bg-bg-elevated text-content-primary hover:bg-line-highlight border border-line',

@@ -78,7 +78,7 @@ export function RealProjectMockup({ slug, title, category }: RealProjectMockupPr
   if (slug === 'khidmat-app') {
     return (
       <div className="flex h-full w-full flex-col justify-between bg-[#081313] p-4 text-white font-sans select-none">
-        {/* Real App Header */}
+        {/* App header */}
         <div className="flex items-center justify-between border-b border-teal-500/20 pb-2.5">
           <div className="flex items-center gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
@@ -86,41 +86,55 @@ export function RealProjectMockup({ slug, title, category }: RealProjectMockupPr
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
           </div>
           <div className="rounded-md bg-teal-500/10 px-3 py-0.5 font-mono text-[11px] text-teal-300">
-            KHIDMAT · Pakistan AI Booking 🇵🇰
+            KHIDMAT · خدمت
           </div>
           <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] text-emerald-300 font-mono">
-            6 Agents Active
+            Offline
           </span>
         </div>
 
-        {/* Real Interactive Chat & Negotiation Log */}
+        {/* Role switch */}
+        <div className="mt-2 flex gap-1 rounded-lg bg-white/5 p-0.5 text-[10px] font-semibold">
+          <span className="flex-1 rounded-md bg-teal-500/25 py-1 text-center text-teal-200">Worker</span>
+          <span className="flex-1 py-1 text-center text-zinc-400">Work giver</span>
+          <span className="rounded-md px-2 py-1 font-mono text-zinc-400">اردو</span>
+        </div>
+
+        {/* Contact + job records */}
         <div className="my-auto space-y-2 py-2">
-          {/* User message */}
-          <div className="flex justify-end">
-            <div className="max-w-[85%] rounded-2xl rounded-tr-sm bg-teal-600/30 border border-teal-500/30 px-3 py-1.5 text-xs text-white">
-              <span className="font-semibold block text-[10px] text-teal-300">User (Rawalpindi)</span>
-              Electrician required for inverter installation today.
+          <div className="rounded-xl border border-teal-500/25 bg-white/5 px-3 py-2">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs font-semibold text-white">Tariq Mehmood</p>
+                <p className="mt-0.5 text-[10px] text-teal-300">
+                  Electrician · Rawalpindi · 0301 2345678
+                </p>
+              </div>
+              <div className="flex gap-1">
+                <span className="rounded-md bg-teal-500/20 px-2 py-1 text-[9px] text-teal-200">Call</span>
+                <span className="rounded-md bg-white/10 px-2 py-1 text-[9px] text-zinc-300">SMS</span>
+              </div>
             </div>
           </div>
 
-          {/* AI Agent Match */}
-          <div className="flex justify-start">
-            <div className="max-w-[90%] rounded-2xl rounded-tl-sm bg-white/5 border border-white/10 px-3 py-2 text-xs text-zinc-200">
-              <div className="flex items-center justify-between gap-2 pb-1 text-[10px] text-emerald-400 font-semibold border-b border-white/10">
-                <span>⚡ BHAROSA Trust: 98% Verified</span>
-                <span>MOL-BHAAV Negotiated</span>
-              </div>
-              <p className="mt-1 text-[11px] text-white">
-                Matched Tariq Electrician · Final price: <strong className="text-emerald-400 font-mono">PKR 1,400</strong> (Market standard: PKR 2,000)
-              </p>
+          <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            <div className="flex items-center justify-between pb-1 border-b border-white/10 text-[10px]">
+              <span className="font-semibold text-emerald-400">Inverter installation</span>
+              <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-emerald-300">Confirmed</span>
             </div>
+            <p className="mt-1.5 text-[10px] text-zinc-300">
+              Today · 4:00 PM · House 14, Satellite Town
+            </p>
+            <p className="mt-0.5 text-[10px] text-zinc-400">
+              PKR <strong className="font-mono text-white">1,400</strong> · Advance PKR 500
+            </p>
           </div>
         </div>
 
-        {/* Bottom Booking Status */}
+        {/* Footer */}
         <div className="flex items-center justify-between border-t border-teal-500/20 pt-2 text-[10px] font-mono text-zinc-400">
-          <span>Engine: Flutter + Gemini AI</span>
-          <span className="text-emerald-400">Status: Booking Confirmed</span>
+          <span>Flutter · Local storage · No account</span>
+          <span className="text-emerald-400">Urdu / English</span>
         </div>
       </div>
     )
@@ -224,17 +238,17 @@ export function RealProjectMockup({ slug, title, category }: RealProjectMockupPr
         {/* Footer info */}
         <div className="flex items-center justify-between border-t border-indigo-500/20 pt-2 text-[10px] font-mono text-zinc-400">
           <span>Flutter Mobile + Node.js API</span>
-          <span className="text-emerald-400">HIPAA Compliant Auth</span>
+          <span className="text-emerald-400">Appwrite Backend</span>
         </div>
       </div>
     )
   }
 
-  // Real UI mockup for Cyber Sathi Security Companion
+  // Real UI mockup for CyberSathi — offline scam analysis
   if (slug === 'cyber-sathi') {
     return (
       <div className="flex h-full w-full flex-col justify-between bg-[#070e12] p-4 text-white font-mono select-none">
-        {/* Real Terminal Bar */}
+        {/* Header */}
         <div className="flex items-center justify-between border-b border-emerald-500/20 pb-2.5">
           <div className="flex items-center gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
@@ -242,31 +256,37 @@ export function RealProjectMockup({ slug, title, category }: RealProjectMockupPr
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
           </div>
           <div className="rounded-md bg-emerald-500/10 px-3 py-0.5 text-[11px] text-emerald-400">
-            cybersathi --inspect --audit
+            cybersathi --scan message
           </div>
-          <span className="text-[10px] text-emerald-400">● Realtime Guard</span>
+          <span className="text-[10px] text-emerald-400">● Local · Offline</span>
         </div>
 
-        {/* Real Security Audit Terminal Output */}
-        <div className="my-auto space-y-1.5 text-xs text-zinc-300 py-2">
-          <div className="text-emerald-400">
-            [+] TARGET: https://secure-api.gateway/v1
+        {/* Scam verdict */}
+        <div className="my-auto space-y-2 py-2 text-xs">
+          <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-[11px] text-zinc-300">
+            <span className="text-[10px] text-zinc-500">INPUT · SMS</span>
+            <p className="mt-1 text-white">
+              &quot;Your HBL account is blocked. Verify within 24h:
+              <span className="text-sky-400"> hbl-secure-verify.pk</span>&quot;
+            </p>
           </div>
-          <div className="text-zinc-300">
-            [*] Checking SSL/TLS Handshake: TLS 1.3 OK
-          </div>
-          <div className="text-zinc-300">
-            [*] OWASP Top 10 Scan: 0 Critical, 0 High Vulnerabilities
-          </div>
-          <div className="text-sky-400">
-            [✓] Phishing & Malicious Payload Analysis: Clean
+
+          <div className="space-y-1 text-[11px]">
+            <div className="flex items-center justify-between text-rose-400">
+              <span>[!] Verdict: PHISHING</span>
+              <span className="font-bold">96% confidence</span>
+            </div>
+            <div className="text-zinc-400">[✓] Sender domain not in bank allowlist</div>
+            <div className="text-zinc-400">[✓] Urgency + credential request detected</div>
+            <div className="text-zinc-400">[✓] Domain matched blocklist (52 entries)</div>
+            <div className="text-sky-400">[i] Local Gemma 2B · no data left device</div>
           </div>
         </div>
 
-        {/* Terminal status */}
+        {/* Footer */}
         <div className="flex items-center justify-between border-t border-emerald-500/20 pt-2 text-[10px] text-zinc-400">
-          <span>FastAPI + Python + Scikit-Learn</span>
-          <span className="text-emerald-400">Status: Protected</span>
+          <span>FastAPI · Ollama · SQLite · React</span>
+          <span className="text-emerald-400">Saved to local history</span>
         </div>
       </div>
     )
@@ -284,7 +304,7 @@ export function RealProjectMockup({ slug, title, category }: RealProjectMockupPr
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
           </div>
           <div className="rounded-md bg-white/5 px-3 py-0.5 font-mono text-[11px] text-zinc-300">
-            jarvis-engine.py --voice-stream
+            jarvis --local --voice
           </div>
           <span className="flex items-center gap-1 text-[11px] text-sky-400 font-mono">
             <Mic className="h-3 w-3 animate-pulse" /> Listening
@@ -305,19 +325,19 @@ export function RealProjectMockup({ slug, title, category }: RealProjectMockupPr
 
           <div className="rounded-xl border border-white/10 bg-white/5 p-2.5 text-xs text-left">
             <span className="font-mono text-[10px] text-zinc-400 block">Voice Transcript:</span>
-            <p className="text-white font-medium italic">
-              &quot;Jarvis, check server deployment status and summarize error logs.&quot;
+            <p className="text-white font-medium">
+              &quot;Jarvis, open VS Code and set a timer for 25 minutes.&quot;
             </p>
             <p className="mt-1 font-mono text-[11px] text-emerald-400">
-              ➜ Done. All 3 microservices healthy. Latency 38ms.
+              ➜ Opened VS Code. Timer set for 25:00.
             </p>
           </div>
         </div>
 
         {/* Footer info */}
         <div className="flex items-center justify-between border-t border-white/10 pt-2 text-[10px] font-mono text-zinc-400">
-          <span>Python + OpenAI + SpeechRecognition</span>
-          <span className="text-sky-400">Response: 380ms</span>
+          <span>Tauri + Rust + local Python</span>
+          <span className="text-emerald-400">On-device · No API key</span>
         </div>
       </div>
     )
@@ -326,25 +346,27 @@ export function RealProjectMockup({ slug, title, category }: RealProjectMockupPr
   // Clean Default Real UI Inspector Mockup for other projects
   return (
     <div className="flex h-full w-full flex-col justify-between bg-[#0b0d14] p-4 text-white font-mono select-none">
-      <div className="flex items-center justify-between border-b border-white/10 pb-2.5">
+      <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-2.5">
         <div className="flex items-center gap-1.5">
           <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
           <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
         </div>
-        <div className="rounded-md bg-white/5 px-3 py-0.5 text-[11px] text-zinc-300">
+        <div className="truncate rounded-md bg-white/5 px-3 py-0.5 font-mono text-[11px] text-zinc-300">
           github.com/tatheer583/{slug}
         </div>
-        <span className="text-[10px] text-emerald-400 font-semibold">{category}</span>
+        <span className="shrink-0 text-[10px] font-semibold text-emerald-400">● Public</span>
       </div>
 
-      <div className="my-auto space-y-1.5 text-xs text-zinc-300 py-3">
-        <p className="font-bold text-sm text-white font-sans">{title}</p>
-        <p className="text-xs text-zinc-400 font-sans italic">
-          Production repository with complete source code, tests, and deployment setup.
+      <div className="my-auto space-y-1.5 py-3 text-xs text-zinc-300">
+        <p className="font-display text-sm font-bold text-white">{title}</p>
+        <p className="text-[10px] uppercase tracking-wider text-sky-400">{category}</p>
+        <p className="text-xs font-sans text-zinc-400">
+          Open-source repository — full source, setup notes and a working download or demo where
+          available.
         </p>
-        <div className="mt-2 rounded-lg bg-white/5 p-2 text-[11px] text-zinc-300 border border-white/5">
-          <code>$ git clone https://github.com/tatheer583/{slug}</code>
+        <div className="mt-2 overflow-hidden rounded-lg border border-white/5 bg-white/5 p-2 text-[11px] text-zinc-300">
+          <code className="block truncate">$ git clone https://github.com/tatheer583/{slug}</code>
         </div>
       </div>
 

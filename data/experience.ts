@@ -5,25 +5,29 @@ export interface ExperienceEntry {
   technologies: string[]
 }
 
-/** Journey started ~2 years ago (mid-2024). */
+/**
+ * Timeline reconstructed from the real commit and release history in the
+ * public repositories — the first repository was created in April 2026 and
+ * the portfolio account itself dates from October 2025.
+ */
 export const EXPERIENCE: ExperienceEntry[] = [
   {
-    period: '2025 — Present',
-    title: 'Full Stack Developer',
+    period: '2026 — Present',
+    title: 'Full Stack & AI Product Developer',
     description:
-      'Building and shipping production web apps end-to-end — React/Next.js UIs, Node & FastAPI backends, databases, auth, and deployment — with AI features where they create real product value.',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+      'Shipping complete products end-to-end: a Next.js portfolio with real GitHub data and dual themes, an open-source YouTube automation suite in TypeScript, a Flutter service app with offline Urdu and English support, and a Kotlin accessibility app for deaf children.',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Flutter', 'Kotlin', 'FastAPI', 'MongoDB'],
   },
   {
-    period: '2024 — 2025',
-    title: 'Full Stack & Applied AI Builder',
+    period: 'Late 2025 — 2026',
+    title: 'Foundations & First Releases',
     description:
-      'Grew from foundations into shipping real projects: travel platforms, IoT dashboards, security tools, and AI assistants — always with a strong full-stack delivery mindset.',
-    technologies: ['React', 'FastAPI', 'Python', 'MongoDB', 'LangChain', 'REST APIs'],
+      'Started the journey with HTML, CSS, JavaScript, React and Python, then moved into applied AI — local LLMs through Ollama, computer vision with MediaPipe, and IoT sensing on ESP32 and Arduino hardware.',
+    technologies: ['JavaScript', 'React', 'Python', 'Git', 'MediaPipe', 'Arduino'],
   },
   {
-    period: 'Mid 2024',
-    title: 'Started the Journey — Foundations',
+    period: '2025',
+    title: 'Began the Journey — Foundations',
     description:
       'Began focused learning in modern web development and software engineering: HTML/CSS/JS, React, Python, Git, and the core patterns behind full-stack products.',
     technologies: ['JavaScript', 'React', 'Python', 'HTML/CSS', 'Git'],

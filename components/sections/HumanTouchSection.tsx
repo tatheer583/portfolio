@@ -26,7 +26,7 @@ const HUMAN_STORIES = [
   {
     icon: MapPin,
     tag: 'Background',
-    title: 'Building from Pakistan for the World 🇵🇰',
+    title: 'Building from Pakistan for the World',
     description:
       'Proudly based in Pakistan, collaborating with global teams and international clients. I practice disciplined async communication, transparent updates, and honest deadlines.',
   },
@@ -56,22 +56,22 @@ export function HumanTouchSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35, delay: index * 0.08 }}
-            className="flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0c0e15] p-5 sm:p-6 transition-all duration-200 hover:border-white/20"
+            className="flex flex-col justify-between rounded-2xl border border-line bg-bg-surface p-5 sm:p-6 transition-all duration-200 hover:border-accent/40 hover:card-hover-glow"
           >
             <div>
               <div className="flex items-center justify-between">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-white">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
                   <item.icon className="h-5 w-5" />
                 </div>
-                <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-mono text-zinc-300 italic">
+                <span className="rounded-full border border-line bg-bg-elevated px-2.5 py-0.5 text-[11px] font-mono text-content-secondary">
                   {item.tag}
                 </span>
               </div>
 
-              <h3 className="mt-4 font-display text-base font-bold text-white">
+              <h3 className="mt-4 font-display text-base font-bold text-content-primary">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm sm:text-base font-medium italic leading-relaxed text-white/90">
+              <p className="mt-2 text-sm sm:text-base font-medium leading-relaxed text-content-secondary">
                 {item.description}
               </p>
             </div>
@@ -84,13 +84,13 @@ export function HumanTouchSection() {
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mt-6 rounded-2xl border border-white/15 bg-gradient-to-r from-sky-500/10 via-white/5 to-emerald-500/10 p-6 text-center sm:text-left sm:flex sm:items-center sm:justify-between sm:gap-6"
+        className="mt-6 rounded-2xl border border-line bg-gradient-to-r from-sky-500/10 via-bg-elevated to-emerald-500/10 p-6 text-center sm:text-left sm:flex sm:items-center sm:justify-between sm:gap-6"
       >
         <div>
-          <h3 className="font-display text-lg font-bold text-white flex items-center justify-center sm:justify-start gap-2">
+          <h3 className="font-display text-lg font-bold text-content-primary flex items-center justify-center sm:justify-start gap-2">
             <span>👋 Want to have a quick, friendly chat?</span>
           </h3>
-          <p className="mt-1 text-sm sm:text-base font-medium italic text-white/90">
+          <p className="mt-1 text-sm sm:text-base font-medium text-content-secondary">
             No robotic contact forms required — feel free to drop a message on WhatsApp or email me directly.
           </p>
         </div>
@@ -101,7 +101,7 @@ export function HumanTouchSection() {
               <MessageCircle className="h-4 w-4 mr-1.5" /> WhatsApp Chat
             </a>
           </Button>
-          <Button asChild size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+          <Button asChild size="sm" variant="outline" className="border-line text-content-primary hover:bg-bg-elevated">
             <a href={`mailto:${SITE.email}`}>
               <Send className="h-4 w-4 mr-1.5" /> Send Email
             </a>

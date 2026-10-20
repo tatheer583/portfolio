@@ -35,8 +35,8 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
   const next = PROJECTS[(idx + 1) % PROJECTS.length]
 
   return (
-    <main className="pt-24">
-      <Section>
+    <main className="pt-16">
+      <Section className="pt-10 md:pt-14">
         <Link
           href="/#projects"
           className="inline-flex items-center gap-2 text-sm font-medium text-content-secondary transition-colors hover:text-accent"
@@ -44,7 +44,16 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           <ArrowLeft className="h-4 w-4" /> All projects
         </Link>
 
-        <div className="mt-6 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+        <div className="mt-6 max-w-3xl">
+          <h1 className="font-display text-3xl font-bold tracking-tight text-content-primary md:text-4xl">
+            {project.title}
+          </h1>
+          <p className="mt-3 text-base leading-relaxed text-content-secondary md:text-lg">
+            {project.description}
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-line bg-bg-elevated">
               <Image
@@ -55,12 +64,6 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 sizes="(min-width: 1024px) 60vw, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6">
-                <h1 className="font-display text-3xl font-bold text-white drop-shadow-lg md:text-4xl">
-                  {project.title}
-                </h1>
-              </div>
             </div>
 
             <p className="mt-8 text-lg leading-relaxed text-content-secondary">
@@ -78,6 +81,24 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 </li>
               ))}
             </ul>
+
+            {project.topics && project.topics.length > 0 && (
+              <>
+                <h2 className="mt-10 font-display text-2xl font-bold text-content-primary">
+                  Repository Topics
+                </h2>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.topics.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-line bg-bg-surface px-3 py-1 font-mono text-xs text-content-secondary"
+                    >
+                      #{t}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
 
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
               <div className="rounded-lg border border-line bg-bg-surface p-6">
@@ -107,11 +128,51 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 ))}
               </div>
 
+              {/* Live repository metadata */}
+              <dl className="mt-6 space-y-2 border-t border-line pt-5 text-sm">
+                {project.language && (
+                  <div className="flex items-center justify-between gap-3">
+                    <dt className="text-content-muted">Primary language</dt>
+                    <dd className="font-medium text-content-primary">{project.language}</dd>
+                  </div>
+                )}
+                {typeof project.stars === 'number' && (
+                  <div className="flex items-center justify-between gap-3">
+                    <dt className="text-content-muted">Stars</dt>
+                    <dd className="font-medium text-content-primary">{project.stars}</dd>
+                  </div>
+                )}
+                {typeof project.forks === 'number' && project.forks > 0 && (
+                  <div className="flex items-center justify-between gap-3">
+                    <dt className="text-content-muted">Forks</dt>
+                    <dd className="font-medium text-content-primary">{project.forks}</dd>
+                  </div>
+                )}
+                {project.license && (
+                  <div className="flex items-center justify-between gap-3">
+                    <dt className="text-content-muted">Licence</dt>
+                    <dd className="text-right font-medium text-content-primary">{project.license}</dd>
+                  </div>
+                )}
+                {project.status && (
+                  <div className="flex items-center justify-between gap-3">
+                    <dt className="text-content-muted">Status</dt>
+                    <dd className="font-medium text-content-primary">{project.status}</dd>
+                  </div>
+                )}
+                {project.updatedAt && (
+                  <div className="flex items-center justify-between gap-3">
+                    <dt className="text-content-muted">Last push</dt>
+                    <dd className="font-medium text-content-primary">{project.updatedAt}</dd>
+                  </div>
+                )}
+              </dl>
+
               <div className="mt-6 flex flex-col gap-3">
                 {project.links.github && (
                   <Button asChild variant="outline" size="sm">
                     <a href={project.links.github} target="_blank" rel="noreferrer">
-                      <Github className="h-4 w-4" /> GitHub
+                      <Github className="h-4 w-4" /> Source Code
                     </a>
                   </Button>
                 )}

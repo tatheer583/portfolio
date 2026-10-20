@@ -1,10 +1,8 @@
 'use client'
 
-import * as React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, ExternalLink, Github } from 'lucide-react'
+import { ArrowRight, ExternalLink, Github, GitFork, Scale, Star } from 'lucide-react'
 import type { Project } from '@/types/project'
 import { Card } from '@/components/ui/card'
 import { TechChip } from '@/components/shared/TechChip'
@@ -24,8 +22,8 @@ const PROJECT_VISUALS: Record<string, { gradient: string; metric: string; label:
   },
   'khidmat-app': {
     gradient: 'from-teal-500/30 via-amber-400/15 to-emerald-500/25',
-    metric: '6 AI agents',
-    label: 'Service orchestration',
+    metric: 'Fully offline',
+    label: 'Urdu & English records',
   },
   'personal-finance-manager': {
     gradient: 'from-emerald-500/30 via-lime-400/15 to-cyan-500/20',
@@ -57,20 +55,20 @@ const PROJECT_VISUALS: Record<string, { gradient: string; metric: string; label:
     metric: 'WiFi sensing',
     label: 'Motion detection',
   },
-  'drone-ai-system': {
-    gradient: 'from-sky-500/25 via-zinc-500/20 to-amber-500/20',
-    metric: 'Real-time CV',
-    label: 'Autonomous vision',
+  'portfolio': {
+    gradient: 'from-violet-500/25 via-sky-500/20 to-indigo-500/25',
+    metric: 'Next.js + Motion',
+    label: 'This portfolio',
   },
-  'agevee-travel': {
-    gradient: 'from-rose-500/20 via-purple-500/20 to-amber-500/20',
-    metric: 'Travel UX',
-    label: 'Full-stack platform',
+  'psl-sign-learn': {
+    gradient: 'from-pink-500/25 via-purple-500/20 to-sky-500/20',
+    metric: '37 Urdu letters',
+    label: 'On-device sign learning',
   },
-  'iot-security-system': {
-    gradient: 'from-teal-500/25 via-lime-500/15 to-orange-500/20',
-    metric: '10-in-1',
-    label: 'Smart monitoring',
+  'channel-automation-ai': {
+    gradient: 'from-orange-500/25 via-amber-500/20 to-sky-500/20',
+    metric: 'Video automation',
+    label: 'Open-source YouTube tooling',
   },
 }
 
@@ -80,7 +78,6 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
     metric: project.categoryLabel,
     label: 'Case study',
   }
-  const [imgFailed, setImgFailed] = React.useState(false)
 
   return (
     <motion.div
@@ -88,9 +85,9 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       transition={{ type: 'spring', stiffness: 300, damping: 24 }}
       className={cn('h-full', className)}
     >
-      <Card hoverable variant="glow" className="group flex h-full flex-col overflow-hidden p-0 border border-white/10 bg-[#0c0e15]">
+      <Card hoverable variant="glow" className="group flex h-full flex-col overflow-hidden p-0 border border-line bg-bg-surface">
         <Link href={`/projects/${project.slug}`} className="block focus:outline-none">
-          <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10">
+          <div className="relative aspect-[16/10] overflow-hidden border-b border-line">
             <RealProjectMockup
               slug={project.slug}
               title={project.title}
@@ -100,14 +97,56 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         </Link>
 
         <div className="flex flex-1 flex-col p-5">
-          <Link href={`/projects/${project.slug}`} className="focus:outline-none">
-            <h3 className="font-display text-lg font-bold text-white transition-colors hover:text-sky-400">
-              {project.title}
-            </h3>
-          </Link>
-          <p className="mt-2 flex-1 text-sm sm:text-base font-medium italic leading-relaxed text-white/95">
+          <div className="flex items-start justify-between gap-3">
+            <Link href={`/projects/${project.slug}`} className="focus:outline-none">
+              <h3 className="font-display text-lg font-bold text-content-primary transition-colors hover:text-accent">
+                {project.title}
+              </h3>
+            </Link>
+            {project.status && (
+              <span
+                className={cn(
+                  'shrink-0 rounded-full border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wide',
+                  project.status === 'Live'
+                    ? 'border-accent3/40 bg-accent3/10 text-accent3'
+                    : project.status === 'Released'
+                      ? 'border-accent/40 bg-accent/10 text-accent'
+                      : 'border-amber-500/40 bg-amber-500/10 text-amber-500'
+                )}
+              >
+                {project.status}
+              </span>
+            )}
+          </div>
+
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-content-secondary">
             {project.description}
           </p>
+
+          {/* Repo metadata straight from GitHub */}
+          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-content-muted">
+            {project.language && (
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-accent" />
+                {project.language}
+              </span>
+            )}
+            {typeof project.stars === 'number' && (
+              <span className="inline-flex items-center gap-1">
+                <Star className="h-3.5 w-3.5" /> {project.stars}
+              </span>
+            )}
+            {typeof project.forks === 'number' && project.forks > 0 && (
+              <span className="inline-flex items-center gap-1">
+                <GitFork className="h-3.5 w-3.5" /> {project.forks}
+              </span>
+            )}
+            {project.license && (
+              <span className="inline-flex items-center gap-1">
+                <Scale className="h-3.5 w-3.5" /> {project.license}
+              </span>
+            )}
+          </div>
 
           <div className="mt-4 flex flex-wrap gap-2">
             {project.tech.slice(0, 5).map((t) => (

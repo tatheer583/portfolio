@@ -2,35 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+.dark {
   --font-syne: 'Syne', system-ui, -apple-system, sans-serif;
   --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
   --font-jetbrains: 'JetBrains Mono', Consolas, monospace;
 
-  /* Deep Black Dark Theme */
-  --bg: #08090d;
-  --bg-surface: #0e1017;
-  --bg-elevated: #151822;
-  --border: rgba(255, 255, 255, 0.1);
-  --border-highlight: rgba(255, 255, 255, 0.2);
+  /* Dark graphite theme */
+  --bg: #1a1c20;
+  --bg-surface: #22252a;
+  --bg-elevated: #2b2f35;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-highlight: rgba(255, 255, 255, 0.18);
   --accent: #38bdf8;
   --accent-light: #7dd3fc;
-  --text-primary: #ffffff;
-  --text-secondary: #f8fafc;
-  --text-muted: #e2e8f0;
+  --accent-2: #a78bfa;
+  --accent-3: #34d399;
+  --text-primary: #f2f4f7;
+  --text-secondary: #c5cad3;
+  --text-muted: #939aa5;
+  --shadow-color: 0 0 0;
+  --shadow-alpha: 0.35;
+  --grid-line: rgba(255, 255, 255, 0.07);
+  --glass-bg: rgba(26, 28, 32, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --hero-scrim: rgba(10, 11, 13, 0.72);
 }
 
 .light {
-  --bg: #08090d;
-  --bg-surface: #0e1017;
-  --bg-elevated: #151822;
-  --border: rgba(255, 255, 255, 0.1);
-  --border-highlight: rgba(255, 255, 255, 0.2);
-  --accent: #38bdf8;
-  --accent-light: #7dd3fc;
-  --text-primary: #ffffff;
-  --text-secondary: #f8fafc;
-  --text-muted: #e2e8f0;
+  --bg: #f2f3f5;
+  --bg-surface: #ffffff;
+  --bg-elevated: #ffffff;
+  --border: rgba(15, 23, 42, 0.1);
+  --border-highlight: rgba(15, 23, 42, 0.2);
+  --accent: #0369a1;
+  --accent-light: #0284c7;
+  --accent-2: #7c3aed;
+  --accent-3: #059669;
+  --text-primary: #101319;
+  --text-secondary: #343a45;
+  --text-muted: #646c79;
+  --shadow-color: 15 23 42;
+  --shadow-alpha: 0.12;
+  --grid-line: rgba(15, 23, 42, 0.07);
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --hero-scrim: rgba(15, 23, 42, 0.55);
 }
 
 * {
@@ -52,23 +69,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* White, Italic, Medium-sized text as requested */
-p, .text-content-secondary, .text-content-muted {
-  color: #ffffff;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.7;
+/* Typography defaults — theme aware so light mode stays readable.
+   Colour/weight stay on the utility classes so Tailwind utilities are never
+   overridden by an unlayered element selector. */
+.text-content-primary,
+.text-content-secondary,
+.text-content-muted {
+  font-style: normal;
 }
 
-/* Reduced Headings: modest size difference with paragraph text */
 h1 {
   font-family: var(--font-syne);
   font-size: 1.65rem;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.015em;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 h2 {
@@ -77,7 +93,7 @@ h2 {
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.015em;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 h3 {
@@ -85,7 +101,7 @@ h3 {
   font-size: 1.18rem;
   font-weight: 600;
   line-height: 1.35;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 button, input, select, textarea { font: inherit; }
@@ -96,8 +112,8 @@ a { color: inherit; }
 h1, h2, h3, h4 { font-family: var(--font-syne); letter-spacing: -0.025em; }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
-  color: #ffffff;
+  background: color-mix(in srgb, var(--accent) 32%, transparent);
+  color: var(--text-primary);
 }
 
 :focus-visible {
@@ -123,16 +139,10 @@ h1, h2, h3, h4 { font-family: var(--font-syne); letter-spacing: -0.025em; }
 
 @layer utilities {
   .glass {
-    background: rgba(15, 21, 35, 0.75);
+    background: var(--glass-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  .light .glass {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--glass-border);
   }
   .text-gradient {
     background: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #c084fc 100%);
@@ -141,16 +151,68 @@ h1, h2, h3, h4 { font-family: var(--font-syne); letter-spacing: -0.025em; }
     -webkit-text-fill-color: transparent;
   }
   .accent-glow {
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.25);
+    box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 25%, transparent);
   }
   .card-hover-glow {
-    box-shadow: 0 16px 40px rgba(99, 102, 241, 0.12), 0 4px 12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 16px 40px rgba(var(--shadow-color) / var(--shadow-alpha)),
+      0 4px 12px rgba(var(--shadow-color) / calc(var(--shadow-alpha) * 0.6));
   }
   .grid-pattern {
     background-size: 40px 40px;
-    background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  }
+
+  /* --- Ambient motion utilities ------------------------------------- */
+  .aurora {
+    background-image:
+      radial-gradient(48% 42% at 18% 22%, color-mix(in srgb, var(--accent) 26%, transparent) 0%, transparent 62%),
+      radial-gradient(42% 38% at 82% 18%, color-mix(in srgb, var(--accent-2) 24%, transparent) 0%, transparent 60%),
+      radial-gradient(50% 45% at 50% 88%, color-mix(in srgb, var(--accent-3) 18%, transparent) 0%, transparent 64%);
+    filter: blur(28px);
+  }
+  .animate-aurora {
+    animation: aurora-drift 18s ease-in-out infinite alternate;
+  }
+  .animate-marquee {
+    animation: marquee-slide 38s linear infinite;
+  }
+  .animate-marquee-slow {
+    animation: marquee-slide 64s linear infinite;
+  }
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
+  }
+  .animate-float-slow {
+    animation: float-slow 9s ease-in-out infinite;
+  }
+  .animate-pulse-ring {
+    animation: pulse-ring 2.6s ease-out infinite;
+  }
+  .animate-shimmer {
+    background: linear-gradient(
+      100deg,
+      transparent 20%,
+      color-mix(in srgb, var(--accent) 22%, transparent) 45%,
+      transparent 70%
+    );
+    background-size: 220% 100%;
+    animation: shimmer-sweep 3.4s linear infinite;
+  }
+  .animate-tilt {
+    transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+  .group:hover .animate-tilt {
+    transform: translateY(-6px) scale(1.012);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
   }
   .no-scrollbar {
     -ms-overflow-style: none;
@@ -342,6 +404,34 @@ h1, h2, h3, h4 { font-family: var(--font-syne); letter-spacing: -0.025em; }
 @keyframes scene-appear { from { opacity: 0; } to { opacity: 1; } }
 @keyframes panel-arrive { from { opacity: 0; transform: translateX(35px) rotate(.6deg); } to { opacity: 1; transform: translateX(0) rotate(0); } }
 @keyframes pencil-spin { to { transform: rotate(360deg); } }
+
+/* Ambient motion keyframes */
+@keyframes aurora-drift {
+  0% { transform: translate3d(-3%, -2%, 0) scale(1); }
+  50% { transform: translate3d(3%, 3%, 0) scale(1.08); }
+  100% { transform: translate3d(-2%, 2%, 0) scale(1.03); }
+}
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.85); opacity: 0.75; }
+  70% { transform: scale(1.9); opacity: 0; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+@keyframes shimmer-sweep {
+  from { background-position: 180% 0; }
+  to { background-position: -80% 0; }
+}
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
 
 @media (min-width: 1800px) { .corridor-intro { left: 5vw; top: 60px; } .corridor-note { right: 6vw; top: 70px; } }
 @media (max-width: 1150px) {

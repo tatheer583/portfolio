@@ -7,17 +7,18 @@ import { ProjectCard } from '@/components/shared/ProjectCard'
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'A selection of AI systems and products built end-to-end by Muhammad Tatheer.',
+  description:
+    'All eleven public projects by Muhammad Tatheer — web, mobile, AI, IoT and security, each with source code and documentation.',
 }
 
 export default function ProjectsPage() {
   return (
-    <main className="pt-24">
-      <Section>
+    <main className="pt-16">
+      <Section className="pt-10 md:pt-14">
         <SectionHeader
           eyebrow="Work"
           title="All Projects"
-          subtitle="Every project below was designed and shipped end-to-end — from model to interface."
+          subtitle="Eleven public repositories — each one a working product with source code, documentation and a live demo or download where available."
         />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p) => (

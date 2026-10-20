@@ -2,12 +2,14 @@
 
 import * as React from 'react'
 import { motion } from 'framer-motion'
+import { useTheme } from 'next-themes'
 import GitHubCalendar from 'react-github-calendar'
 import { Star, GitFork, BookOpen, Users } from 'lucide-react'
 import { Section } from '@/components/layout/Section'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { Card } from '@/components/ui/card'
 import { SITE } from '@/lib/constants'
+import { PROJECTS } from '@/data/projects'
 
 interface RepoStat {
   name: string
@@ -18,6 +20,7 @@ interface RepoStat {
 }
 
 export function GitHubSection() {
+  const { resolvedTheme } = useTheme()
   const [stats, setStats] = React.useState<{
     repos: number
     stars: number
@@ -55,11 +58,15 @@ export function GitHubSection() {
     }
   }, [])
 
-  const fallbackPinned = [
-    { name: 'jarvis-ai-assistant', description: 'Voice-powered personal AI assistant', stars: 42, forks: 8, language: 'Python' },
-    { name: 'cyber-sathi', description: 'AI cybersecurity assistant', stars: 28, forks: 4, language: 'Python' },
-    { name: 'drone-ai-system', description: 'Autonomous drone with computer vision', stars: 31, forks: 5, language: 'Python' },
-  ]
+  const fallbackPinned = PROJECTS.filter((p) => p.featured)
+    .slice(0, 6)
+    .map((p) => ({
+      name: p.slug,
+      description: p.description,
+      stars: p.stars ?? 0,
+      forks: p.forks ?? 0,
+      language: p.language ?? null,
+    }))
 
   const pinned = stats?.pinned?.length ? stats.pinned : fallbackPinned
 
@@ -85,10 +92,10 @@ export function GitHubSection() {
       <div className="mb-10 overflow-hidden rounded-lg border border-line bg-bg-surface p-4">
         <GitHubCalendar
           username={SITE.githubUsername}
-          colorScheme="dark"
+          colorScheme={resolvedTheme === 'light' ? 'light' : 'dark'}
           theme={{
-            dark: ['#111111', '#3D3580', '#5C4FBF', '#7B6AFF', '#6C63FF'],
-            light: ['#f0f0f0', '#ddd6fe', '#c4b5fd', '#a78bfa', '#6C63FF'],
+            dark: ['#22252a', '#0e4f6e', '#0a6d99', '#0d8ec4', '#38bdf8'],
+            light: ['#e8eaee', '#bae6fd', '#7dd3fc', '#38bdf8', '#0369a1'],
           }}
         />
       </div>

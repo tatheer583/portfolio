@@ -37,8 +37,8 @@ function ProgressBar({
       )}
     >
       <div className="mb-2 flex items-center justify-between">
-        <span className="text-sm font-semibold text-white">{label}</span>
-        <span className="font-mono text-xs font-bold text-white">{value}%</span>
+        <span className="text-sm font-semibold text-content-primary">{label}</span>
+        <span className="font-mono text-xs font-bold text-content-primary">{value}%</span>
       </div>
       <div className="h-2 w-full overflow-hidden rounded-full bg-bg-elevated">
         <motion.div
@@ -85,10 +85,10 @@ export function SkillsSection() {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
                 Primary niche
               </p>
-              <h3 className="mt-1 font-display text-2xl font-bold text-white">
+              <h3 className="mt-1 font-display text-2xl font-bold text-content-primary">
                 Full Stack Developer
               </h3>
-              <p className="mt-2 max-w-3xl text-base font-medium italic leading-relaxed text-white">
+              <p className="mt-2 max-w-3xl text-base font-medium leading-relaxed text-content-primary">
                 End-to-end product delivery is my core strength: polished React/Next.js frontends,
                 reliable Node & FastAPI backends, databases, auth, APIs, and deployment — with AI
                 and security used as amplifiers, not distractions.
@@ -105,7 +105,7 @@ export function SkillsSection() {
               <TabsTrigger key={cat.id} value={cat.id}>
                 {cat.label}
                 {cat.featured ? (
-                  <span className="ml-1.5 rounded-full bg-white/20 px-1.5 py-0.5 text-[10px] uppercase tracking-wide">
+                  <span className="ml-1.5 rounded-full bg-accent/20 px-1.5 py-0.5 text-[10px] uppercase tracking-wide">
                     Niche
                   </span>
                 ) : null}

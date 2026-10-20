@@ -5,7 +5,7 @@ import './studio.css'
 import './studio-navigation.css'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { SITE } from '@/lib/constants'
-import SiteChrome from '@/components/corridor/SiteChrome'
+import SiteChrome from '@/components/layout/SiteChrome'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.siteUrl),
@@ -14,20 +14,28 @@ export const metadata: Metadata = {
     template: '%s | Muhammad Tatheer',
   },
   description:
-    'Muhammad Tatheer is a Full Stack Developer who builds polished web products, with AI and security depth.',
+    'Muhammad Tatheer is a Full Stack Developer in Islamabad, Pakistan — building web, mobile, AI and IoT products with React, Next.js, Python, Flutter and Kotlin.',
   keywords: [
     'Muhammad Tatheer',
     'Full Stack Developer',
     'Next.js Developer',
     'React Developer',
+    'TypeScript Developer',
+    'Python Developer',
+    'FastAPI Developer',
+    'Flutter Developer',
+    'Kotlin Developer',
     'AI Engineer',
-    'AI Agent Developer',
-    'Computer Vision Developer',
-    'Junior Security Analyst',
-    'Web Penetration Testing',
-    'Burp Suite',
-    'Machine Learning Engineer',
-    'RAG Systems',
+    'Local LLM',
+    'Ollama',
+    'MediaPipe',
+    'Computer Vision',
+    'IoT Developer',
+    'ESP32',
+    'WiFi Sensing',
+    'Cybersecurity',
+    'Islamabad',
+    'Pakistan',
   ],
   authors: [{ name: 'Muhammad Tatheer' }],
   creator: 'Muhammad Tatheer',
@@ -60,16 +68,34 @@ const personJsonLd = {
   url: SITE.siteUrl,
   jobTitle: 'Full Stack Developer',
   description: SITE.tagline,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Islamabad',
+    addressCountry: 'PK',
+  },
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'NUTECH University',
+  },
   knowsAbout: [
     'Full Stack Development',
     'React',
     'Next.js',
+    'TypeScript',
     'Node.js',
+    'Python',
+    'FastAPI',
+    'Flutter',
+    'Kotlin',
+    'Android Development',
     'Artificial Intelligence',
-    'Machine Learning',
+    'Local Large Language Models',
     'Computer Vision',
-    'Web Application Security',
-    'Penetration Testing',
+    'MediaPipe',
+    'Internet of Things',
+    'ESP32',
+    'WiFi Sensing',
+    'Application Security',
   ],
   sameAs: [SITE.githubUrl, SITE.linkedinUrl],
 }

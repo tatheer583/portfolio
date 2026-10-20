@@ -8,9 +8,7 @@ import {
   Bot,
   Shield,
   Smartphone,
-  Sparkles,
   GitPullRequest,
-  Database,
 } from 'lucide-react'
 import { Section } from '@/components/layout/Section'
 import { SectionHeader } from '@/components/shared/SectionHeader'
@@ -20,42 +18,42 @@ const INTERESTS = [
     icon: Globe2,
     title: 'Full Stack Engineering',
     description:
-      'Designing robust, end-to-end architectures from scalable server APIs to pixel-perfect, accessible React and Next.js frontends.',
+      'Designing end-to-end architectures — from Express and FastAPI services and database models through to accessible React and Next.js interfaces.',
     tag: 'Web & Systems',
   },
   {
     icon: Bot,
-    title: 'Agentic AI & LLMs',
+    title: 'Local & Applied AI',
     description:
-      'Building multi-agent reasoning loops, context-aware RAG pipelines, and automated agent workflows using Gemini, OpenAI, and LangChain.',
+      'Running models where the data lives: Gemma through Ollama for offline scam detection, OpenAI for product features, and on-device inference where privacy matters.',
     tag: 'Artificial Intelligence',
   },
   {
     icon: Cpu,
-    title: 'Computer Vision & Edge AI',
+    title: 'Computer Vision & Sensing',
     description:
-      'Exploring real-time object detection, visual perception models (YOLO, OpenCV), and deploying efficient neural nets on edge hardware.',
+      'MediaPipe hand landmarks for sign language recognition, Random Forest classifiers over gas-sensor arrays, and WiFi CSI as a sensor without a camera.',
     tag: 'Vision & Perception',
   },
   {
     icon: Shield,
     title: 'Application Security',
     description:
-      'Applying proactive security standards: web penetration testing, OWASP Top 10 mitigation, auth flow hardening, and AI threat defense.',
+      'Phishing and malware detection, deterministic threat rules, OWASP Top 10 mitigation, audit logging and permission boundaries.',
     tag: 'Cybersecurity',
   },
   {
     icon: Smartphone,
-    title: 'Mobile Solutions',
+    title: 'Mobile & Offline-First',
     description:
-      'Crafting fluid cross-platform mobile apps using Flutter and Dart with offline caching, clean state management, and native bridges.',
-    tag: 'Cross-Platform',
+      'Flutter and Kotlin apps that keep working without a connection — local storage, crash-safe writes, Urdu and English support with RTL layouts.',
+    tag: 'Mobile',
   },
   {
     icon: GitPullRequest,
-    title: 'Open Source & Tech Community',
+    title: 'Open Source & Craft',
     description:
-      'Participating in hackathons, contributing to developer tools, writing clean documentation, and collaborating with global builders.',
+      'Shipping MIT-licensed tools, writing documentation that explains the limits honestly, and publishing every project with a working download or demo.',
     tag: 'Collaboration',
   },
 ]
@@ -90,10 +88,10 @@ export function InterestsSection() {
             </div>
 
             {/* Content */}
-            <h3 className="mt-5 text-xl font-bold text-white transition-colors group-hover:text-cyan-400">
+            <h3 className="mt-5 text-xl font-bold text-content-primary transition-colors group-hover:text-accent">
               {item.title}
             </h3>
-            <p className="mt-2 text-base font-medium italic leading-relaxed text-white">
+            <p className="mt-2 text-base font-medium leading-relaxed text-content-primary">
               {item.description}
             </p>
           </motion.div>

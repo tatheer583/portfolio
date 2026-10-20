@@ -11,8 +11,10 @@ const config: Config = {
         accent: {
           DEFAULT: 'var(--accent)',
           light: 'var(--accent-light)',
-          glow: 'rgba(99,102,241,0.2)',
+          glow: 'color-mix(in srgb, var(--accent) 20%, transparent)',
         },
+        accent2: { DEFAULT: 'var(--accent-2)' },
+        accent3: { DEFAULT: 'var(--accent-3)' },
         content: { primary: 'var(--text-primary)', secondary: 'var(--text-secondary)', muted: 'var(--text-muted)' },
       },
       fontFamily: {
@@ -34,6 +36,11 @@ const config: Config = {
         'glow-pulse': 'glowPulse 2s ease-in-out infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        aurora: 'aurora-drift 18s ease-in-out infinite alternate',
+        marquee: 'marquee-slide 38s linear infinite',
+        floatSlow: 'float-slow 9s ease-in-out infinite',
+        pulseRing: 'pulse-ring 2.6s ease-out infinite',
+        shimmer: 'shimmer-sweep 3.4s linear infinite',
       },
       keyframes: {
         float: {
@@ -51,6 +58,28 @@ const config: Config = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
+        },
+        'aurora-drift': {
+          '0%': { transform: 'translate3d(-3%, -2%, 0) scale(1)' },
+          '50%': { transform: 'translate3d(3%, 3%, 0) scale(1.08)' },
+          '100%': { transform: 'translate3d(-2%, 2%, 0) scale(1.03)' },
+        },
+        'marquee-slide': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
+        'float-slow': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-14px)' },
+        },
+        'pulse-ring': {
+          '0%': { transform: 'scale(0.85)', opacity: '0.75' },
+          '70%': { transform: 'scale(1.9)', opacity: '0' },
+          '100%': { transform: 'scale(1.9)', opacity: '0' },
+        },
+        'shimmer-sweep': {
+          from: { backgroundPosition: '180% 0' },
+          to: { backgroundPosition: '-80% 0' },
         },
       },
     },

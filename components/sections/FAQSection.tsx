@@ -10,22 +10,22 @@ const FAQS = [
   {
     question: 'What services do you provide as a Full Stack Developer?',
     answer:
-      'I offer end-to-end software development: building modern responsive frontends with React and Next.js, designing reliable backend RESTful and GraphQL APIs with Node.js/Express and FastAPI/Python, architecting database models (MongoDB, PostgreSQL), setting up authentication and security controls, and handling production deployments.',
+      'I offer end-to-end software development: modern responsive frontends with React and Next.js, backend APIs with Node.js/Express and FastAPI/Flask, database design with MongoDB and SQLite, authentication and security controls, and production deployment on Vercel or GitHub Pages.',
   },
   {
     question: 'How do you incorporate AI into your projects?',
     answer:
-      'I build practical, production-ready AI solutions rather than superficial wrappers. My work includes multi-agent orchestration systems (like the KHIDMAT App), Retrieval-Augmented Generation (RAG) pipelines, conversational concierge interfaces with Google Gemini and OpenAI, and computer vision models (YOLO, OpenCV) for image recognition and automation.',
+      'I build practical AI rather than thin wrappers. Recent work includes a local Gemma model running through Ollama for offline scam detection, MediaPipe hand-landmark recognition running entirely on-device in a Kotlin app, Random Forest classification on a five-sensor gas array, and OpenAI-powered features in the Skardu Spring commerce platform. I am deliberate about what runs locally versus in the cloud.',
   },
   {
     question: 'What is your core tech stack?',
     answer:
-      'My primary frontend stack is Next.js, React, TypeScript, and Tailwind CSS. For backend services, I specialize in Node.js, Express, and FastAPI (Python). For data storage, I use MongoDB and PostgreSQL. For mobile development, I build with Flutter and Dart.',
+      'My primary frontend stack is Next.js, React, TypeScript and Tailwind CSS. For backend services I work in Node.js, Express, FastAPI and Flask. For data I use MongoDB and SQLite. For mobile I build with Flutter and Kotlin, and for desktop with Tauri and Rust.',
   },
   {
     question: 'Are you available for full-time employment or freelance contracts?',
     answer:
-      'Yes, I am actively available for full-time engineering roles, remote positions, and select freelance or consulting projects. I am comfortable working across different time zones and collaborating in agile team environments.',
+      'Yes, I am actively available for full-time engineering roles, remote positions, and select freelance or consulting projects. I am based in Islamabad, Pakistan (UTC+5), and I am comfortable working across different time zones and collaborating in agile team environments.',
   },
   {
     question: 'Can you work on an existing codebase or only build from scratch?',
@@ -35,7 +35,7 @@ const FAQS = [
   {
     question: 'How can we get started or discuss a project?',
     answer:
-      'You can reach out directly via the Contact section below, send an email to mtatheer11@gmail.com, or message me on WhatsApp at +92 344 8901377. I usually respond within 24 hours to schedule an initial discussion.',
+      'You can reach out directly via the Contact section below, send an email to mtatheer1@gmail.com, or message me on WhatsApp at +92 349 2899537. I usually respond within 24 hours to schedule an initial discussion.',
   },
 ]
 
@@ -62,15 +62,15 @@ function FAQItem({
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex w-full items-center justify-between gap-4 p-5 text-left font-display text-lg font-bold text-white transition-colors hover:text-cyan-400 sm:p-6 sm:text-xl"
+        className="flex w-full items-center justify-between gap-4 p-5 text-left font-display text-lg font-bold text-content-primary transition-colors hover:text-accent sm:p-6 sm:text-xl"
       >
         <span className="flex items-center gap-3">
-          <HelpCircle className="h-5 w-5 shrink-0 text-cyan-400" />
+          <HelpCircle className="h-5 w-5 shrink-0 text-accent" />
           <span>{item.question}</span>
         </span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-zinc-400 transition-transform duration-300 ${
-            isOpen ? 'rotate-180 text-cyan-400' : ''
+          className={`h-5 w-5 shrink-0 text-content-muted transition-transform duration-300 ${
+            isOpen ? 'rotate-180 text-accent' : ''
           }`}
         />
       </button>
@@ -84,7 +84,7 @@ function FAQItem({
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
           >
-            <div className="border-t border-line/60 px-5 pt-3 pb-5 text-base font-medium italic leading-relaxed text-white sm:px-6 sm:pb-6">
+            <div className="border-t border-line/60 px-5 pt-3 pb-5 text-base font-medium leading-relaxed text-content-primary sm:px-6 sm:pb-6">
               {item.answer}
             </div>
           </motion.div>

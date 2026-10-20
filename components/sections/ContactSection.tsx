@@ -127,18 +127,18 @@ export function ContactSection() {
 
         <div className="space-y-6">
           <div className="rounded-xl border border-line bg-bg-surface p-6">
-            <h3 className="font-display text-xl font-bold text-white">Direct Channels</h3>
+            <h3 className="font-display text-xl font-bold text-content-primary">Direct Channels</h3>
             <ul className="mt-4 space-y-4">
-              <li className="flex items-center gap-3 text-base font-medium italic text-white">
-                <Mail className="h-5 w-5 text-cyan-400" />
-                <a href={`mailto:${SITE.email}`} className="hover:text-cyan-400">{SITE.email}</a>
+              <li className="flex items-center gap-3 text-base font-medium text-content-primary">
+                <Mail className="h-5 w-5 text-accent" />
+                <a href={`mailto:${SITE.email}`} className="hover:text-accent">{SITE.email}</a>
               </li>
-              <li className="flex items-center gap-3 text-base font-medium italic text-white">
-                <Phone className="h-5 w-5 text-cyan-400" />
-                <a href={`tel:${SITE.phone.replace(/[^+\d]/g, '')}`} className="hover:text-cyan-400">{SITE.phone}</a>
+              <li className="flex items-center gap-3 text-base font-medium text-content-primary">
+                <Phone className="h-5 w-5 text-accent" />
+                <a href={`tel:${SITE.phone.replace(/[^+\d]/g, '')}`} className="hover:text-accent">{SITE.phone}</a>
               </li>
-              <li className="flex items-center gap-3 text-base font-medium italic text-white">
-                <MapPin className="h-5 w-5 text-cyan-400" />
+              <li className="flex items-center gap-3 text-base font-medium text-content-primary">
+                <MapPin className="h-5 w-5 text-accent" />
                 {SITE.location}
               </li>
             </ul>
